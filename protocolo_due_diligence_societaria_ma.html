@@ -1,0 +1,285 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+body{font-family:inherit}
+.top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.progress-area{display:flex;align-items:center;gap:10px}
+.prog-bar{width:160px;height:6px;background:var(--color-border-tertiary);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--color-text-primary);border-radius:3px;transition:width .3s}
+.prog-label{font-size:12px;color:var(--color-text-secondary)}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.filter-btn{padding:4px 11px;border-radius:14px;font-size:11px;cursor:pointer;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .15s}
+.filter-btn.on{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
+.area{margin-bottom:18px;border:0.5px solid var(--color-border-tertiary);border-radius:10px;overflow:hidden}
+.area-header{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;background:var(--color-background-secondary);user-select:none;border-bottom:0.5px solid var(--color-border-tertiary)}
+.area-icon{font-size:16px;width:24px;text-align:center}
+.area-name{font-size:13px;font-weight:500;color:var(--color-text-primary);flex:1}
+.area-count{font-size:11px;color:var(--color-text-tertiary)}
+.chevron{font-size:12px;color:var(--color-text-tertiary);transition:transform .2s}
+.area.open .chevron{transform:rotate(180deg)}
+.items{display:none;padding:6px 0}
+.area.open .items{display:block}
+.item{display:flex;align-items:flex-start;gap:10px;padding:8px 14px;border-bottom:0.5px solid var(--color-border-tertiary);cursor:pointer;transition:background .12s}
+.item:last-child{border-bottom:none}
+.item:hover{background:var(--color-background-secondary)}
+.item.done{opacity:.5}
+.check{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s;background:var(--color-background-primary)}
+.item.done .check{background:var(--color-text-primary);border-color:var(--color-text-primary)}
+.check-mark{display:none;color:var(--color-background-primary);font-size:10px;font-weight:700}
+.item.done .check-mark{display:block}
+.item-body{flex:1}
+.item-title{font-size:12px;font-weight:500;color:var(--color-text-primary);line-height:1.4}
+.item-desc{font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.5}
+.item.done .item-title,.item.done .item-desc{color:var(--color-text-tertiary)}
+.crit{display:inline-block;font-size:9px;padding:1px 6px;border-radius:8px;font-weight:600;margin-left:6px;vertical-align:middle}
+.c-high{background:#FCEBEB;color:#791F1F}
+.c-med{background:#FAEEDA;color:#633806}
+.c-low{background:#E1F5EE;color:#085041}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.sum-card{background:var(--color-background-secondary);border-radius:8px;padding:10px 12px;text-align:center}
+.sum-num{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.sum-label{font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
+.reset-btn{font-size:11px;padding:4px 12px;cursor:pointer;border-radius:14px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary)}
+</style>
+
+<h2 class="sr-only">Protocolo de due diligence societária para operações de M&A — checklist interativo por área com classificação de criticidade</h2>
+
+<div style="padding:4px 0 4px">
+  <div class="summary">
+    <div class="sum-card"><div class="sum-num" id="total-num">0</div><div class="sum-label">Concluídos</div></div>
+    <div class="sum-card"><div class="sum-num" id="pct-num">0%</div><div class="sum-label">Progresso</div></div>
+    <div class="sum-card"><div class="sum-num" id="high-remain">—</div><div class="sum-label">Críticos pendentes</div></div>
+  </div>
+  <div class="top-bar">
+    <div class="filter-row" id="filters">
+      <button class="filter-btn on" data-f="all" onclick="filter(this)">Todos</button>
+      <button class="filter-btn" data-f="high" onclick="filter(this)">🔴 Críticos</button>
+      <button class="filter-btn" data-f="med" onclick="filter(this)">🟡 Importantes</button>
+      <button class="filter-btn" data-f="low" onclick="filter(this)">🟢 Complementares</button>
+      <button class="filter-btn" data-f="pending" onclick="filter(this)">Pendentes</button>
+    </div>
+    <button class="reset-btn" onclick="resetAll()">Reiniciar</button>
+  </div>
+
+  <div id="areas-container"></div>
+</div>
+
+<script>
+const areas = [
+  {
+    id:"societaria", icon:"🏛️", name:"Estrutura societária",
+    items:[
+      {t:"Atos constitutivos completos e todas as alterações",d:"Contrato social (LTDA) ou Estatuto (S.A.) desde a constituição, com todas as alterações em ordem cronológica. Verificar coerência entre versões.",c:"high"},
+      {t:"Quadro societário atual e histórico de transferências",d:"Identificar quem são os sócios/acionistas reais (beneficiários finais). Atenção a estruturas com offshore ou nominees.",c:"high"},
+      {t:"Livros societários obrigatórios",d:"Livro de registro de sócios/acionistas, livro de atas, livro de transferência de quotas/ações. Verificar regularidade das escriturações.",c:"high"},
+      {t:"Acordo de sócios / shareholders' agreement",d:"Verificar direitos de preferência, tag-along, drag-along, lock-up, mecanismos de deadlock, direito de voto e gestão.",c:"high"},
+      {t:"Atas de assembleias e reuniões (últimos 5 anos)",d:"Identificar deliberações relevantes: distribuição de lucros, alteração de capital, eleição de administradores, aprovação de operações relevantes.",c:"high"},
+      {t:"Procurações vigentes",d:"Mapear poderes outorgados, especialmente para operações financeiras, imóveis e contratos relevantes. Verificar prazo e abrangência.",c:"med"},
+      {t:"Grupo econômico — diagrama de participações",d:"Mapear todas as entidades relacionadas (subsidiárias, coligadas, controladas, SPEs). Identificar operações intercompany e garantias cruzadas.",c:"high"},
+      {t:"Capital social integralizado vs. subscrito",d:"Verificar se há parcelas não integralizadas que configurem obrigação dos sócios.",c:"med"},
+    ]
+  },
+  {
+    id:"fiscal", icon:"📋", name:"Fiscal e tributário",
+    items:[
+      {t:"Certidões negativas — conjunto completo",d:"PGFN/RFB federal, FGTS (CEF), estadual (SEFAZ), municipal (ISS), Trabalhista (CNDT). Cada uma tem validade específica.",c:"high"},
+      {t:"Parcelamentos fiscais ativos (REFIS, PERT, PAES, etc.)",d:"Verificar montante, saldo devedor, regularidade das parcelas e risco de exclusão. Parcelamentos renegociados podem revelar passivos ocultos.",c:"high"},
+      {t:"Autuações fiscais e processos administrativos",d:"Consultar SPED, e-CAC, SEFAZ estadual e municipal. Classificar por fase (discussão, CARF, judicial) e por probabilidade de êxito.",c:"high"},
+      {t:"Revisão de obrigações acessórias (SPED Contábil, ECF, ECD, DCTF)",d:"Inconsistências entre declarações entregues à Receita são o principal gatilho de autuações futuras.",c:"high"},
+      {t:"Regime tributário e adequação (Lucro Real, Presumido, Simples)",d:"Verificar se o regime adotado é o mais adequado e se há risco de exclusão ou enquadramento compulsório.",c:"med"},
+      {t:"Transfer pricing — operações com partes relacionadas",d:"Se houver operações cross-border, verificar adequação às regras da Lei 14.596/23 (nova regra alinhada à OCDE).",c:"med"},
+      {t:"Planejamento tributário existente — opiniões legais",d:"Revisar estruturas de planejamento (ágio, JCP, ISS, ICMS). Avaliar solidez e risco de desconsideração.",c:"med"},
+      {t:"ICMS — créditos, diferencial de alíquota, ST",d:"Para empresas de comércio/indústria: verificar aproveitamento de créditos, adequação do DIFAL e conformidade com substituição tributária.",c:"med"},
+    ]
+  },
+  {
+    id:"trabalhista", icon:"👥", name:"Trabalhista e previdenciário",
+    items:[
+      {t:"Quadro de funcionários — CLT, PJs e terceirizados",d:"Mapear total de colaboradores por vínculo. Identificar PJs com alto risco de reconhecimento de vínculo empregatício (critérios: pessoalidade, habitualidade, subordinação, onerosidade).",c:"high"},
+      {t:"Passivo trabalhista — reclamações em curso",d:"Consultar CNIS, TRT de cada estado de operação. Classificar por probabilidade e valor provisionado x real.",c:"high"},
+      {t:"Certificado de Regularidade do FGTS (CRF)",d:"Verificar validade. FGTS em atraso é passivo imediato com multas e juros que se acumulam rapidamente.",c:"high"},
+      {t:"Contratos especiais — diretores estatutários e representantes comerciais",d:"Diretores podem ter vínculo empregatício paralelo. Representantes comerciais (Lei 4.886/65) têm direito à indenização na rescisão.",c:"high"},
+      {t:"PLR, stock options e benefícios variáveis",d:"Verificar planos aprovados em assembleia, critérios de pagamento e passivos diferidos.",c:"med"},
+      {t:"Laudos obrigatórios — PCMSO, PGR (ant. PPRA), LTCAT",d:"Documentação de saúde ocupacional e segurança do trabalho. Ausência gera autuação e impede defesa em reclamações.",c:"med"},
+      {t:"Convenções coletivas e acordos sindicais vigentes",d:"Identificar obrigações negociadas (banco de horas, PLR, adicionais). Verificar se foram cumpridas.",c:"med"},
+      {t:"Processos com ex-sócios e ex-administradores",d:"Sócios retirantes que tinham vínculo empregatício paralelo podem ajuizar reclamação em até 2 anos do desligamento.",c:"med"},
+    ]
+  },
+  {
+    id:"contratos", icon:"📄", name:"Contratos relevantes",
+    items:[
+      {t:"Mapeamento de concentração de receita",d:"Identificar clientes que representam >10% da receita. Verificar prazo, renovação automática e cláusulas de saída. Alta concentração é risco crítico de valuation.",c:"high"},
+      {t:"Cláusulas de change of control",d:"Contratos que permitem rescisão ou aceleração em caso de mudança de controle. Identificar e negociar waiver antes do fechamento.",c:"high"},
+      {t:"Contratos de financiamento e dívida",d:"CCB, CRA, CRI, debêntures, contratos bancários. Verificar covenants financeiros, vencimento antecipado por mudança de controle e garantias reais outorgadas.",c:"high"},
+      {t:"Contratos de fornecimento estratégico",d:"Fornecedores únicos (sole source) ou que representam dependência operacional crítica.",c:"high"},
+      {t:"Contratos de locação imobiliária relevantes",d:"Prazo remanescente, possibilidade de sublocação, renovatória, multa rescisória. Verificar se o imóvel é essencial para a operação.",c:"med"},
+      {t:"Contratos de exclusividade e distribuição",d:"Verificar territórios, metas, penalidades. Distribuidores exclusivos com prazo longo podem limitar a estratégia pós-aquisição.",c:"med"},
+      {t:"Non-competes e non-solicits — sócios e executivos-chave",d:"Verificar validade, prazo e abrangência geográfica. No Brasil, eficácia é limitada sem contraprestação.",c:"med"},
+      {t:"Contratos com partes relacionadas",d:"Verificar condições de mercado, aprovação em assembleia (S.A. — art. 156 LSA) e conformidade com deveres fiduciários.",c:"high"},
+    ]
+  },
+  {
+    id:"pi", icon:"💡", name:"Propriedade intelectual e tecnologia",
+    items:[
+      {t:"Marcas registradas — INPI e internacionais (OMPI)",d:"Verificar titularidade, validade, classes protegidas e se a marca-core está registrada em todas as classes relevantes para o negócio.",c:"high"},
+      {t:"Patentes concedidas e pedidos pendentes",d:"Verificar titularidade, prazo de vigência, abrangência de proteção e se há ameaças de invalidade.",c:"high"},
+      {t:"Titularidade do software e código-fonte",d:"Verificar se o software foi desenvolvido por colaboradores CLT (titularidade da empresa) ou terceirizados (verificar cessão contratual). Licenças open source com efeito copyleft (GPL) podem restringir o produto.",c:"high"},
+      {t:"Domínios, apps e ativos digitais",d:"Registros no registro.br e internacionais. Verificar titularidade e renovações.",c:"med"},
+      {t:"Segredos industriais e know-how",d:"Verificar se há proteção contratual (NDA, cláusulas de confidencialidade) com ex-funcionários e terceiros que tiveram acesso.",c:"med"},
+      {t:"Conformidade LGPD",d:"Verificar RIPD, base legal para tratamento de dados, contratos com operadores, DPO nomeado, política de privacidade atualizada e histórico de incidentes.",c:"high"},
+      {t:"Licenças de software (SaaS e on-premise)",d:"Verificar se os contratos de licença permitem transferência em M&A (change of control). Adobe, SAP, Oracle e similares frequentemente não permitem.",c:"med"},
+    ]
+  },
+  {
+    id:"litigation", icon:"⚖️", name:"Contencioso e passivos contingentes",
+    items:[
+      {t:"Mapeamento de processos judiciais e administrativos",d:"Consultar tribunais de todos os estados de operação. Classificar por: valor da causa, probabilidade de perda (provável, possível, remoto) e provisionamento contábil.",c:"high"},
+      {t:"Comparativo — provisão contábil x passivo real estimado",d:"Auditores provisionam pelo IFRS/CPC, mas o risco real pode ser maior. Solicitar opinião do advogado interno e externo sobre cada processo relevante.",c:"high"},
+      {t:"Garantias prestadas a terceiros",d:"Aval, fiança, penhor, alienação fiduciária e hipotecas outorgadas a favor de terceiros. Podem criar passivos não refletidos no balanço.",c:"high"},
+      {t:"Processos regulatórios e administrativos (CADE, ANATEL, ANVISA etc.)",d:"Investigações em curso por autoridades regulatórias — podem resultar em multas, restrições operacionais ou intervenção.",c:"high"},
+      {t:"Passivos ambientais — laudos e ações civis públicas",d:"Para indústria, agro e mineração: verificar laudos de passivo ambiental, autos de infração do IBAMA/órgãos estaduais e ações civis públicas.",c:"high"},
+      {t:"CADE — análise de concentração",d:"Verificar se a operação precisa de aprovação prévia do CADE (faturamento combinado >R$750M OU parte com faturamento >R$75M no Brasil).",c:"high"},
+    ]
+  },
+  {
+    id:"imoveis", icon:"🏗️", name:"Imóveis e ativos físicos",
+    items:[
+      {t:"Escrituras e matrículas — imóveis próprios",d:"Certidão de ônus reais atualizada (<30 dias) de cada imóvel. Verificar hipotecas, penhoras, alienação fiduciária, usufruto e servidões.",c:"high"},
+      {t:"Imóveis com posse sem título — ocupação irregular",d:"Identificar ativos ocupados pela empresa sem documentação formal. Risco de reivindicação por terceiros.",c:"med"},
+      {t:"Laudos de avaliação — ativos fixos relevantes",d:"Máquinas, equipamentos e tecnologia com valor relevante no balanço. Verificar vida útil real vs. depreciação contábil.",c:"med"},
+      {t:"Contratos de comodato — ativos de terceiros",d:"Mapear ativos usados pela empresa que pertencem a sócios ou partes relacionadas. Verificar condições de uso e devolução.",c:"med"},
+    ]
+  },
+  {
+    id:"financeiro", icon:"💰", name:"Financeiro e contábil",
+    items:[
+      {t:"Demonstrações financeiras auditadas — 3 a 5 anos",d:"Preferencialmente auditadas por firma independente. Se não auditadas, riscos de distorção são significativamente maiores.",c:"high"},
+      {t:"EBITDA ajustado — normalização de resultado",d:"Eliminar itens não recorrentes (ganhos na venda de ativos, despesas com a transação, salários de sócios acima do mercado). O EBITDA real é a base do valuation.",c:"high"},
+      {t:"Capital de giro histórico e sazonalidade",d:"Analisar ciclo de caixa: prazo médio de recebimento, estocagem e pagamento. Entender necessidade de capital de giro normalizada.",c:"high"},
+      {t:"Dívida líquida — estrutura e custo",d:"Decompor dívida bruta por credor, prazo, taxa e garantias. Calcular dívida líquida para ajustar enterprise value.",c:"high"},
+      {t:"Qualidade do recebível — inadimplência e provisão",d:"Analisar aging de recebíveis. Verificar adequação da provisão para devedores duvidosos (PDD).",c:"med"},
+      {t:"Contingências off-balance e obrigações futuras",d:"Earnouts de aquisições anteriores, compromissos de investimento, garantias, operações de hedge.",c:"high"},
+    ]
+  },
+  {
+    id:"governanca", icon:"🛡️", name:"Governança e compliance",
+    items:[
+      {t:"Lei Anticorrupção (12.846/13) — programa de integridade",d:"Verificar se a empresa tem código de ética, canal de denúncias, treinamentos e due diligence de fornecedores. Ausência é risco regulatório e reputacional.",c:"high"},
+      {t:"Histórico de compliance — sanções e investigações internas",d:"Investigações internas, demissões por justa causa por conduta e histórico de relacionamento com autoridades.",c:"high"},
+      {t:"Estrutura de controles internos",d:"Segregação de funções, alçadas de aprovação, auditoria interna. Empresas sem controles têm risco operacional e fiscal elevado.",c:"med"},
+      {t:"Conflito de interesses — administradores e sócios",d:"Transações entre a empresa e sócios/administradores (compra de imóvel, mútuo, serviços). Verificar aprovação e condições de mercado.",c:"high"},
+      {t:"Seguros vigentes",d:"Responsabilidade civil, D&O (diretores e administradores), propriedade, interrupção de negócios. Verificar coberturas e exclusões.",c:"med"},
+    ]
+  },
+];
+
+let checked = new Set();
+let activeFilter = "all";
+
+function totalItems(){return areas.reduce((s,a)=>s+a.items.length,0)}
+function highItems(){return areas.reduce((s,a)=>s+a.items.filter(i=>i.c==="high").length,0)}
+
+function updateStats(){
+  const total = totalItems();
+  const done = checked.size;
+  const highTotal = highItems();
+  const highDone = [...checked].filter(k=>{
+    const [ai,ii]=k.split("-");
+    return areas[+ai]?.items[+ii]?.c==="high";
+  }).length;
+  document.getElementById("total-num").textContent=done;
+  document.getElementById("pct-num").textContent=Math.round(done/total*100)+"%";
+  document.getElementById("high-remain").textContent=(highTotal-highDone);
+}
+
+function getKey(ai,ii){return ai+"-"+ii}
+
+function toggleItem(ai,ii){
+  const k=getKey(ai,ii);
+  if(checked.has(k)) checked.delete(k); else checked.add(k);
+  const el=document.getElementById("item-"+k);
+  el.classList.toggle("done",checked.has(k));
+  updateAreaCount(ai);
+  updateStats();
+}
+
+function updateAreaCount(ai){
+  const area=areas[ai];
+  const done=area.items.filter((_,ii)=>checked.has(getKey(ai,ii))).length;
+  const vis=getVisibleItems(ai);
+  document.getElementById("acount-"+ai).textContent=done+"/"+area.items.length+" concluídos";
+}
+
+function getVisibleItems(ai){
+  return areas[ai].items.filter((item,ii)=>{
+    if(activeFilter==="all") return true;
+    if(activeFilter==="high") return item.c==="high";
+    if(activeFilter==="med") return item.c==="med";
+    if(activeFilter==="low") return item.c==="low";
+    if(activeFilter==="pending") return !checked.has(getKey(ai,ii));
+    return true;
+  });
+}
+
+function render(){
+  const c=document.getElementById("areas-container");
+  c.innerHTML="";
+  areas.forEach((area,ai)=>{
+    const visItems=getVisibleItems(ai);
+    if(visItems.length===0) return;
+    const done=area.items.filter((_,ii)=>checked.has(getKey(ai,ii))).length;
+    const div=document.createElement("div");
+    div.className="area open";
+    div.innerHTML=`<div class="area-header" onclick="toggleArea(this.parentElement)">
+      <span class="area-icon">${area.icon}</span>
+      <span class="area-name">${area.name}</span>
+      <span class="area-count" id="acount-${ai}">${done}/${area.items.length} concluídos</span>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="items" id="items-${ai}"></div>`;
+    c.appendChild(div);
+    const itemsEl=div.querySelector("#items-"+ai);
+    area.items.forEach((item,ii)=>{
+      if(activeFilter==="all"||
+        (activeFilter==="high"&&item.c==="high")||
+        (activeFilter==="med"&&item.c==="med")||
+        (activeFilter==="low"&&item.c==="low")||
+        (activeFilter==="pending"&&!checked.has(getKey(ai,ii)))){
+        const k=getKey(ai,ii);
+        const isDone=checked.has(k);
+        const critLabel={high:"Crítico",med:"Importante",low:"Complementar"}[item.c];
+        const critClass={high:"c-high",med:"c-med",low:"c-low"}[item.c];
+        const el=document.createElement("div");
+        el.className="item"+(isDone?" done":"");
+        el.id="item-"+k;
+        el.onclick=()=>toggleItem(ai,ii);
+        el.innerHTML=`<div class="check"><span class="check-mark">✓</span></div>
+          <div class="item-body">
+            <div class="item-title">${item.t}<span class="crit ${critClass}">${critLabel}</span></div>
+            <div class="item-desc">${item.d}</div>
+          </div>`;
+        itemsEl.appendChild(el);
+      }
+    });
+  });
+  updateStats();
+}
+
+function toggleArea(el){el.classList.toggle("open")}
+
+function filter(btn){
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+  activeFilter=btn.dataset.f;
+  render();
+}
+
+function resetAll(){
+  if(!confirm("Reiniciar todo o progresso?")) return;
+  checked.clear();
+  render();
+}
+
+render();
+</script>

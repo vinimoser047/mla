@@ -1,0 +1,493 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.layout{display:grid;grid-template-columns:200px 1fr;gap:0;min-height:500px;border:0.5px solid var(--color-border-tertiary);border-radius:10px;overflow:hidden}
+.sidebar{border-right:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+.sidebar-item{padding:10px 14px;cursor:pointer;border-bottom:0.5px solid var(--color-border-tertiary);transition:background .12s;display:flex;align-items:center;gap:8px}
+.sidebar-item:last-child{border-bottom:none}
+.sidebar-item.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+.sidebar-item.active .cat-icon,.sidebar-item.active .cat-name,.sidebar-item.active .cat-count{color:var(--color-background-primary)!important}
+.cat-icon{font-size:14px;width:18px;text-align:center}
+.cat-name{font-size:12px;font-weight:500;color:var(--color-text-primary);flex:1;line-height:1.3}
+.cat-count{font-size:10px;color:var(--color-text-tertiary)}
+.main{overflow:hidden}
+.main-header{padding:14px 18px 10px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+.main-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.main-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.clauses{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+.clause-card{border:0.5px solid var(--color-border-tertiary);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.clause-card:hover{border-color:var(--color-border-secondary)}
+.clause-card.open{border-color:var(--color-border-primary)}
+.clause-head{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--color-background-secondary)}
+.clause-name{font-size:12px;font-weight:500;color:var(--color-text-primary);flex:1}
+.power{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 7px;border-radius:8px;font-weight:600;white-space:nowrap}
+.p-max{background:#FCEBEB;color:#791F1F}
+.p-high{background:#FAEEDA;color:#633806}
+.p-med{background:#E1F5EE;color:#085041}
+.chev{font-size:10px;color:var(--color-text-tertiary);transition:transform .2s;margin-left:4px}
+.clause-card.open .chev{transform:rotate(180deg)}
+.clause-body{display:none;padding:12px 14px;border-top:0.5px solid var(--color-border-tertiary)}
+.clause-card.open .clause-body{display:block}
+.section-label{font-size:10px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;margin-top:10px}
+.section-label:first-child{margin-top:0}
+.clause-text{font-size:11px;color:var(--color-text-secondary);line-height:1.65;background:var(--color-background-secondary);border-radius:6px;padding:10px 12px;border-left:2px solid var(--color-border-secondary);font-family:var(--font-mono,monospace)}
+.note{font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+.tip-row{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.tip{font-size:10px;padding:2px 8px;border-radius:8px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+.flag{font-size:10px;padding:2px 8px;border-radius:8px;background:#FCEBEB;border:0.5px solid #F7C1C1;color:#791F1F}
+.copy-btn{font-size:10px;padding:3px 10px;cursor:pointer;border-radius:8px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);float:right;margin-left:8px;margin-bottom:4px}
+.copy-btn:hover{background:var(--color-background-secondary)}
+.search-wrap{padding:10px 14px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.search-input{width:100%;padding:6px 10px;border:0.5px solid var(--color-border-secondary);border-radius:6px;font-size:12px;background:var(--color-background-primary);color:var(--color-text-primary);outline:none}
+.search-input:focus{border-color:var(--color-border-primary)}
+.empty{padding:24px;text-align:center;font-size:12px;color:var(--color-text-tertiary)}
+</style>
+
+<h2 class="sr-only">Biblioteca de cláusulas de blindagem para contratos empresariais de alto valor, organizada por categoria com texto-modelo e notas estratégicas</h2>
+
+<div style="padding:4px 0 4px">
+<div class="layout">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="main">
+    <div class="search-wrap">
+      <input class="search-input" placeholder="Buscar cláusula..." id="search" oninput="doSearch(this.value)">
+    </div>
+    <div class="main-header" id="main-header">
+      <div class="main-title" id="main-title">Selecione uma categoria</div>
+      <div class="main-desc" id="main-desc"></div>
+    </div>
+    <div class="clauses" id="clauses-area"></div>
+  </div>
+</div>
+</div>
+
+<script>
+const cats=[
+  {
+    id:"responsabilidade",icon:"🛡️",name:"Limitação de responsabilidade",
+    desc:"As cláusulas mais negociadas em contratos de alto valor. Definem o teto do risco financeiro de cada parte.",
+    clauses:[
+      {
+        name:"Cap global de responsabilidade",power:"max",
+        text:`A responsabilidade total de qualquer das Partes decorrente deste Contrato ou de sua execução, 
+a qualquer título, não excederá o valor equivalente a [●] vezes o valor total pago ou a pagar 
+pela Contratante nos [12 (doze)] meses imediatamente anteriores ao evento gerador do dano ("Limite Global"). 
+O Limite Global é o único e exclusivo remédio disponível à Parte prejudicada, 
+independentemente da natureza da pretensão (contratual, extracontratual, regulatória ou outra).`,
+        why:"Sem este cap, um único evento pode gerar responsabilidade ilimitada. Em contratos de TI, consultoria e M&A, é a cláusula mais disputada.",
+        tips:["Defina o multiplicador conforme margem do contrato: de 1x a 3x para serviços; valor integral para M&A","Inclua expressamente que vale para dolo apenas se exigido pelo cliente (CC art. 413)","Negocie teto diferenciado para violação de PI e LGPD"],
+        flags:["Cláusula ineficaz para dolo ou culpa grave se o contrato for de consumo (CDC)","Excluir sempre responsabilidade por morte ou dano à saúde em contratos B2C"]
+      },
+      {
+        name:"Exclusão de danos indiretos e lucros cessantes",power:"max",
+        text:`Em nenhuma hipótese qualquer das Partes será responsável por danos indiretos, 
+mediatos, reflexos, punitivos, perda de receita, perda de oportunidade de negócio, 
+perda de dados, interrupção de atividade ou lucros cessantes, 
+ainda que a Parte responsável tenha sido previamente informada sobre a possibilidade de tais danos.`,
+        why:"Danos indiretos e lucros cessantes são ilimitados por natureza. Esta exclusão protege contra pedidos indenizatórios desproporcionais ao contrato.",
+        tips:["Use a expressão 'perda de oportunidade de negócio' para barrar teorias criativas","Combine com o cap global — uma sem a outra cria lacunas","Redija de forma bilateral: protege ambas as partes"],
+        flags:["Tribunais brasileiros frequentemente relativizam em caso de dolo ou culpa grave","Arbitragem internacional tende a respeitar mais rigorosamente"]
+      },
+      {
+        name:"Força maior e hardship",power:"high",
+        text:`Nenhuma das Partes será responsabilizada pelo inadimplemento de suas obrigações 
+decorrente de evento de Força Maior. Para fins deste Contrato, "Força Maior" significa 
+qualquer evento imprevisível, inevitável e alheio ao controle razoável da Parte afetada, 
+incluindo, sem limitação: catástrofes naturais, pandemias, atos de governo, guerras, 
+sanções internacionais e falhas generalizadas de infraestrutura de telecomunicações.
+A Parte afetada deverá notificar a outra no prazo de [5] dias úteis do início do evento. 
+Caso o evento persista por mais de [90] dias, qualquer das Partes poderá rescindir 
+o Contrato sem penalidade, mediante notificação prévia de [15] dias.`,
+        why:"A cláusula genérica do CC (arts. 393 e 396) é vaga. Uma definição contratual clara reduz litígios sobre o que configura ou não força maior.",
+        tips:["Liste exemplos não exaustivos — inclua sanções e falhas de fornecedores críticos","Defina prazo de notificação: omissão deve afastar a proteção","Adicione hardship para desequilíbrio econômico prolongado (ex: inflação >X%)"],
+        flags:["Crise econômica isolada geralmente não configura força maior — seja preciso","Atrasos de fornecedores da parte afetada raramente são aceitos como excludente"]
+      },
+    ]
+  },
+  {
+    id:"reps",icon:"📋",name:"Reps, warranties & indenização",
+    desc:"Declarações contratuais com mecanismo de indenização. Coração de qualquer SPA ou contrato de M&A.",
+    clauses:[
+      {
+        name:"Cesta de franquia (basket) e cap de indenização",power:"max",
+        text:`As obrigações de indenização previstas nesta Cláusula somente serão exigíveis 
+quando o valor agregado de todas as Perdas apuradas superar o montante de R$ [●] 
+("Franquia"), hipótese em que a totalidade das Perdas será indenizável (tipping basket). 
+A responsabilidade total do Vendedor por indenização não excederá [●]% do Preço de Compra 
+("Teto de Indenização").`,
+        why:"Evita que o vendedor seja acionado por qualquer pequena inconsistência. A franquia filtra reclamações de valor baixo, que são proporcionalmente caras de resolver.",
+        tips:["Basket típico em M&A brasileiro: 0,5% a 1,5% do enterprise value","Teto típico: 15% a 30% do preço para reps gerais; 100% para fraude e title","Use 'tipping basket' (tudo ou nada) — mais favorável ao comprador que 'deductible'"],
+        flags:["Reps de title, capacidade e fraude nunca devem ter basket ou cap","Separate indemnities para passivos ambientais e tributários conhecidos"]
+      },
+      {
+        name:"Sobrevivência das declarações (survival)",power:"high",
+        text:`As Declarações e Garantias prestadas neste Contrato sobreviverão ao Fechamento 
+pelo prazo de [18 (dezoito)] meses, exceto quanto a: 
+(i) Declarações de Título e Capacidade: sobrevivência indeterminada; 
+(ii) Declarações Fiscais e Tributárias: prazo prescricional aplicável + [6] meses; 
+(iii) Declarações Ambientais: [5 (cinco)] anos; 
+(iv) Fraude e dolo: sem limitação temporal.`,
+        why:"Sem survival clause, as reps podem se extinguir com o fechamento (closing). Esta cláusula define por quanto tempo o comprador pode acionar o vendedor.",
+        tips:["Negocie prazo diferenciado por categoria de risco — prazos únicos são ineficientes","Alinhe com o prazo de escrow: survival deve ser ≥ prazo do escrow","Para passivo fiscal, survival mínimo = prazo decadencial (5 anos) + buffer"],
+        flags:["Prazo de survival inferior a 12 meses é pouco prático — processo de auditoria leva tempo","Cuidado: prazo excessivo aumenta custo de D&O insurance do vendedor"]
+      },
+      {
+        name:"Mecanismo de indenização (indemnification)",power:"high",
+        text:`O Vendedor indenizará, defenderá e isentará o Comprador de quaisquer perdas, 
+danos, custos, despesas, honorários advocatícios razoáveis e passivos 
+("Perdas") decorrentes de: (i) falsidade ou inexatidão material de qualquer 
+Declaração; (ii) descumprimento de qualquer Compromisso; (iii) Passivos Excluídos. 
+O Comprador deverá notificar o Vendedor no prazo de [30] dias após tomar ciência 
+de qualquer Perda potencial, sob pena de perda do direito de indenização 
+na proporção do prejuízo causado pelo atraso na notificação.`,
+        why:"Define o fluxo de acionamento da indenização. Sem isso, o comprador vai direto ao litígio, que é mais caro e demorado.",
+        tips:["Inclua 'defend': vendedor participa da defesa de processos de terceiros","Prazo de notificação: 30 dias é razoável; evite prazos abaixo de 15 dias","Defina quem controla a defesa em third-party claims (geralmente o indenizador)"],
+        flags:["'Honorários advocatícios razoáveis' — defina critério objetivo ou haverá litígio","Cuidado com indemnification circular entre partes relacionadas"]
+      },
+    ]
+  },
+  {
+    id:"operacao", icon:"⚙️", name:"Proteção da operação",
+    desc:"Cláusulas que protegem a lógica econômica e estratégica do contrato ao longo de sua vigência.",
+    clauses:[
+      {
+        name:"Material Adverse Change (MAC)",power:"max",
+        text:`O Fechamento está condicionado à não ocorrência, entre a Data de Assinatura 
+e a Data de Fechamento, de qualquer evento, fato ou circunstância que, individualmente 
+ou em conjunto, resulte ou possa razoavelmente resultar em efeito materialmente adverso 
+sobre os negócios, condição financeira, resultados operacionais ou perspectivas 
+da Empresa-Alvo ("Efeito Adverso Relevante"), excluindo-se expressamente: 
+(i) condições gerais de mercado; (ii) alterações macroeconômicas sistêmicas; 
+(iii) mudanças regulatórias setoriais aplicáveis igualmente a todos os concorrentes; 
+(iv) efeitos decorrentes do anúncio desta transação.`,
+        why:"Permite ao comprador se recusar a fechar se o alvo se deteriorar entre a assinatura e o fechamento. Negociação central em M&A.",
+        tips:["Liste as exclusões explicitamente — a MAC cláusula vaga raramente é exercida com sucesso","Inclua carve-out para efeitos causados pela própria transação (MAC triggering MAC)","Defina 'materialmente adverso' com parâmetros numéricos quando possível (ex: queda >20% EBITDA)"],
+        flags:["MAC é difícil de exercer na prática — tribunais (e árbitros) exigem deterioração severa e durável","Pandemia de 2020: maioria dos compradores perdeu discussões de MAC sem carve-out explícito"]
+      },
+      {
+        name:"Change of Control",power:"high",
+        text:`Este Contrato não poderá ser cedido, no todo ou em parte, sem prévia anuência 
+escrita da outra Parte, que não será negada sem justa causa. Considera-se Change of Control 
+a transferência, direta ou indireta, de [50%+1] das quotas/ações com direito de voto 
+da Parte, ou qualquer alteração que resulte na mudança do Controle efetivo, 
+conforme definido na Lei nº 6.404/76. Na hipótese de Change of Control sem anuência, 
+a Parte não controlante poderá rescindir o Contrato imediatamente, sem penalidade, 
+ou exigir a manutenção das condições vigentes por [12] meses adicionais.`,
+        why:"Impede que seu cliente acorde com uma parte e descubra, depois, que está cumprindo obrigações para um concorrente que adquiriu a outra parte.",
+        tips:["Defina controle com parâmetros claros — evite remissão genérica à Lei das S.A.","Inclua change of control indireto (mudança na holding controladora)","Negocie período de continuidade: 6 a 12 meses dá tempo de renegociar"],
+        flags:["Cláusula mal redigida pode ser acionada por reestruturações societárias internas inofensivas","Verificar sempre em contratos de financiamento — vencimento antecipado automático é comum"]
+      },
+      {
+        name:"Most Favored Nation (MFN)",power:"high",
+        text:`Durante a vigência deste Contrato, caso a Contratada ofereça a qualquer terceiro 
+condições contratuais (incluindo preço, prazo, escopo ou condições de pagamento) 
+mais favoráveis do que as previstas neste instrumento para serviços substancialmente 
+similares, a Contratada deverá, dentro de [30] dias, notificar a Contratante 
+e automaticamente estender a esta as condições mais favoráveis, retroativamente 
+à data de vigência do contrato com o terceiro. Para fins desta cláusula, 
+"substancialmente similares" significa volume de contratação equivalente a [●]% 
+ou mais do volume objeto deste Contrato.`,
+        why:"Garante que o cliente não será preterido por novos clientes com poder de negociação maior. Essencial em contratos de fornecimento de longo prazo.",
+        tips:["Defina 'substancialmente similar' — sem isso a cláusula é facilmente contornada","Inclua obrigação de notificação ativa — não dependa de o cliente descobrir","Negocie acesso a auditoria para verificar conformidade (audit right)"],
+        flags:["MFN com definição vaga gera mais litígio do que proteção — seja preciso","Cuidado em mercados regulados: pode conflitar com obrigação de igualdade tarifária"]
+      },
+      {
+        name:"Exclusividade e não-concorrência",power:"med",
+        text:`Durante o prazo de [●] anos após o encerramento deste Contrato ou da relação comercial, 
+a Parte Restrita não poderá, direta ou indiretamente, por si ou por interposta pessoa, 
+exercer atividade concorrente com [definição precisa do negócio] no território de [●], 
+nem contratar ou solicitar a contratação de empregados ou prestadores de serviços 
+da outra Parte que tenham atuado no objeto deste Contrato, sem prévia anuência escrita. 
+Em contrapartida, a Parte Restrita receberá a compensação de R$ [●] ("Compensação Restritiva").`,
+        why:"No Brasil, non-competes sem contraprestação são sistematicamente afastados pela Justiça do Trabalho e têm eficácia duvidosa na esfera civil.",
+        tips:["Sempre inclua contraprestação financeira — essencial para eficácia","Limite geograficamente: non-compete nacional para empresa regional é desproporcional","Prazo máximo razoável: 2 a 5 anos para executivos; 1 a 3 anos para operacionais"],
+        flags:["Sem compensação financeira explícita: eficácia próxima de zero","Prazo superior a 5 anos raramente sobrevive a revisão judicial ou arbitral"]
+      },
+    ]
+  },
+  {
+    id:"preco", icon:"💰", name:"Ajuste de preço e earnout",
+    desc:"Mecanismos que protegem o valor econômico do contrato contra variações de performance ou informação.",
+    clauses:[
+      {
+        name:"Ajuste de preço por working capital",power:"max",
+        text:`O Preço de Compra será ajustado, após o Fechamento, com base na variação 
+do Capital de Giro Normalizado ("CGN") apurado na Data de Fechamento em comparação 
+com o CGN de Referência de R$ [●]. O CGN será calculado conforme Metodologia de Cálculo 
+constante do Anexo [●], elaborada em conformidade com os princípios contábeis 
+adotados consistentemente pela Empresa-Alvo nos [24 (vinte e quatro)] meses anteriores. 
+O Vendedor e o Comprador terão [30] dias para revisar e contestar o Demonstrativo de Ajuste; 
+na ausência de contestação tempestiva, o ajuste será considerado definitivo.`,
+        why:"Garante que o vendedor não drene o capital de giro entre a assinatura e o fechamento, entregando uma empresa financeiramente diferente do que foi avaliada.",
+        tips:["Defina a metodologia de cálculo do CGN em anexo detalhado — é onde os litígios acontecem","Inclua mecanismo de expert determination para disputas sobre o cálculo","Prazo de contestação deve ser longo o suficiente para auditoria real: 30 a 45 dias"],
+        flags:["Definição imprecisa de 'capital de giro' é a causa nº 1 de disputas pós-fechamento em M&A","Alinhe com o auditor do comprador antes de assinar — surpresas contábeis são caras"]
+      },
+      {
+        name:"Earnout com métricas objetivas",power:"high",
+        text:`Além do Preço Base, o Comprador pagará ao Vendedor valor adicional ("Earnout") 
+calculado conforme abaixo, caso as seguintes métricas sejam atingidas nos períodos indicados:
+(i) [Ano 1]: EBITDA Ajustado ≥ R$ [●]: Earnout de R$ [●];
+(ii) [Ano 2]: Receita Líquida ≥ R$ [●] e EBITDA Ajustado ≥ R$ [●]: Earnout de R$ [●].
+O Comprador se compromete a: (a) operar o negócio adquirido de boa-fé e de forma 
+a não prejudicar artificialmente o atingimento das métricas; 
+(b) manter sistema de reporte separado para apuração do Earnout; 
+(c) não realizar alocações de custos intercompany que impactem as métricas.`,
+        why:"Alinha interesses entre comprador e vendedor quando há incerteza sobre performance futura. O risco está nas obrigações do comprador — sem elas, o earnout é ilusório.",
+        tips:["Defina EBITDA Ajustado em anexo — itens como alocação de overhead são campo de batalha","Inclua obrigação de 'best efforts' operacional do comprador — cláusula frequentemente omitida","Métricas mistas (receita + EBITDA) são mais robustas que métricas únicas"],
+        flags:["Earnout baseado em 'lucro líquido' é facilmente manipulável — evite","Sem auditoria independente anual do apurador, vendedor fica à mercê do comprador"]
+      },
+      {
+        name:"Escrow e retenção de preço",power:"high",
+        text:`Do Preço de Compra, o valor de R$ [●] ("Valor em Escrow") será retido pelo 
+Agente Fiduciário [nome da instituição] pelo prazo de [18 (dezoito)] meses 
+("Período de Escrow"), como garantia das obrigações de indenização do Vendedor. 
+O Valor em Escrow será liberado ao Vendedor ao término do Período de Escrow, 
+deduzido o valor de eventuais Perdas aprovadas ou pendentes de resolução. 
+O Agente Fiduciário somente liberará recursos mediante instrução conjunta das Partes 
+ou decisão judicial/arbitral transitada em julgado.`,
+        why:"É a única garantia real de que o vendedor pagará uma indenização — sem escrow, o comprador tem uma sentença mas pode não ter com quem cobrar.",
+        tips:["Escrow típico: 10% a 20% do preço pelo prazo de survival","Escolha banco custodiante neutro — não o banco de nenhuma das partes","Inclua instrução de dupla chave: nenhuma parte libera sozinha"],
+        flags:["Escrow em conta corrente sem custodiante formal não tem validade legal plena","Cuidado com rendimentos do escrow: definir quem recebe os juros durante o período"]
+      },
+    ]
+  },
+  {
+    id:"conflito", icon:"⚖️", name:"Resolução de conflitos",
+    desc:"Define como e onde os litígios serão resolvidos. Uma das decisões mais estratégicas do contrato.",
+    clauses:[
+      {
+        name:"Cláusula arbitral completa (CAM-CCBC / CCI)",power:"max",
+        text:`Qualquer controvérsia decorrente ou relacionada a este Contrato, 
+incluindo quanto à sua existência, validade, eficácia, interpretação, execução 
+ou resolução, será submetida à arbitragem administrada pelo [Centro de Arbitragem 
+e Mediação da Câmara de Comércio Brasil-Canadá – CAM-CCBC / Câmara de Comércio Internacional – CCI], 
+de acordo com seu Regulamento vigente na data de início do procedimento. 
+O tribunal arbitral será composto por [3 (três)] árbitros. 
+A sede da arbitragem será [São Paulo/SP], Brasil. 
+O idioma será o Português. A lei aplicável ao mérito será a lei brasileira. 
+A sentença arbitral será definitiva, vinculante e não sujeita a recurso, 
+ressalvada a ação de nulidade nos termos da Lei nº 9.307/96.`,
+        why:"Arbitragem oferece confidencialidade, árbitros especializados, velocidade relativa e sentença executável internacionalmente (Convenção de Nova Iorque).",
+        tips:["CAM-CCBC: melhor custo-benefício para arbitragens domésticas até R$50M","CCI: obrigatória para contratos com partes internacionais","Defina número de árbitros: 1 árbitro para até ~R$10M; 3 para valores maiores"],
+        flags:["Cláusula arbitral em branco ('a controvérsia será resolvida por arbitragem') gera incidente de nulidade","Nunca misture foro judicial e arbitragem para o mesmo tipo de litígio"]
+      },
+      {
+        name:"Escada de resolução (mediação prévia obrigatória)",power:"high",
+        text:`As Partes concordam em adotar o seguinte procedimento escalonado ("Escada de Resolução") 
+antes de iniciar qualquer procedimento arbitral:
+(i) Nível 1 – Negociação Direta: notificação formal e reunião entre representantes sêniores 
+das Partes no prazo de [15] dias;
+(ii) Nível 2 – Mediação: caso a negociação direta não resulte em acordo em [30] dias, 
+as Partes submeterão a controvérsia à mediação administrada pelo [CAM-CCBC / CIESP] 
+pelo prazo máximo de [60] dias;
+(iii) Nível 3 – Arbitragem: frustrada a mediação, qualquer Parte poderá iniciar 
+o procedimento arbitral conforme Cláusula [●].`,
+        why:"Mediação resolve cerca de 70% das disputas comerciais em menor tempo e custo. A escada preserva a relação comercial e evita arbitragem desnecessária.",
+        tips:["Defina prazos fixos — mediação indefinida é manobra protelatória","Inclua cláusula de confidencialidade para as negociações da escada","Representantes sêniores devem ter poderes para transigir — inclua isso"],
+        flags:["Sem prazo fixo para a escada, a parte de má-fé usa o processo para atrasar","Cumprimento formal da escada sem boa-fé real não impede arbitragem"]
+      },
+      {
+        name:"Expert determination para disputas técnicas",power:"med",
+        text:`Disputas de natureza exclusivamente técnica ou contábil, incluindo aquelas 
+relacionadas ao Ajuste de Preço, Apuração de Métricas de Earnout e Cálculo de SLA, 
+serão submetidas à determinação vinculante de um expert independente ("Expert") 
+indicado de comum acordo pelas Partes ou, na ausência de acordo em [10] dias, 
+nomeado pelo [Instituto dos Auditores Independentes do Brasil – IBRACON]. 
+A determinação do Expert será final, vinculante e incontestável pelas Partes, 
+exceto em caso de erro manifesto ou fraude.`,
+        why:"É muito mais rápido e barato que arbitragem para disputas técnicas. Um contador ou engenheiro resolve em semanas o que um tribunal arbitral levaria meses.",
+        tips:["Use para disputas sobre números, nunca para disputas de direito","Defina 'erro manifesto' para limitar o recurso à arbitragem posterior","Expert de accounting: indique IBRACON ou Big Four como nomeador"]
+      },
+    ]
+  },
+  {
+    id:"rescisao", icon:"🚪", name:"Rescisão e saída",
+    desc:"Definem os direitos de saída de cada parte e as consequências financeiras de cada cenário.",
+    clauses:[
+      {
+        name:"Rescisão por conveniência com aviso prévio",power:"high",
+        text:`Qualquer das Partes poderá rescindir este Contrato, sem causa e sem penalidade, 
+mediante notificação escrita à outra com antecedência mínima de [90 (noventa)] dias. 
+Na hipótese de rescisão por conveniência pelo Contratante, este pagará à Contratada: 
+(i) todos os valores devidos até a data efetiva da rescisão; 
+(ii) custos de desmobilização devidamente documentados; 
+(iii) remuneração pelos trabalhos em andamento calculada pro rata temporis. 
+Excluem-se desta indenização lucros cessantes e danos indiretos.`,
+        why:"Contratos cativos sem saída são armadilha. A cláusula de rescisão por conveniência é o direito de saída com custo previsível — essencial em contratos de longo prazo.",
+        tips:["Prazo de aviso é o principal ponto de negociação: 30 dias (simples) a 180 dias (contratos críticos)","Defina exaustivamente o que é indenizável na saída — omissões geram litígio","Inclua reversão de ativos e transferência de knowhow como condição de rescisão"]
+      },
+      {
+        name:"Período de cura (cure period)",power:"high",
+        text:`Na hipótese de inadimplemento de qualquer obrigação prevista neste Contrato 
+("Inadimplemento"), a Parte não inadimplente deverá: 
+(i) notificar por escrito a Parte inadimplente descrevendo o Inadimplemento com precisão; 
+(ii) conceder prazo de [30 (trinta)] dias para a cura do Inadimplemento ("Período de Cura"). 
+A rescisão somente poderá ser exercida caso o Inadimplemento não seja sanado 
+ao final do Período de Cura. Inadimplementos de natureza irreparável ou reincidentes 
+[por mais de [2] vezes no mesmo exercício] não darão direito a Período de Cura.`,
+        why:"Evita rescisão por inadimplementos menores ou temporários. Preserva a relação comercial e obriga a parte lesada a documentar formalmente o problema.",
+        tips:["Prazo de cura variável por tipo de obrigação: 5 dias para pagamento; 30 para obrigações complexas","Defina o que é 'irreparável' — vazamento de dados confidenciais, por exemplo","Reincidência sem cura é o mecanismo para inadimplentes habituais"]
+      },
+      {
+        name:"Break-up fee (pré-contratual)",power:"med",
+        text:`Na hipótese de a Parte [A/B] desistir da Transação Contemplada após a assinatura 
+deste [MOU/LOI/Acordo de Exclusividade] e antes do Fechamento, por razão que não 
+constitua descumprimento material da outra Parte ou condição resolutiva não satisfeita, 
+a Parte desistente pagará à outra o montante de R$ [●] ("Multa de Desistência") 
+como indenização pré-estimada, a título de liquidação de todas as perdas decorrentes 
+da desistência, incluindo custos de due diligence, assessoria e oportunidades perdidas.`,
+        why:"Comprometimento financeiro que desincentiva desistência pós-assinatura de LOI. Em M&A, protege o vendedor que expôs informações sensíveis e perdeu outros compradores.",
+        tips:["Valor típico: 1% a 3% do enterprise value","Defina se é exclusivo (substitui qualquer indenização) ou mínimo (piso indenizatório)","Inclua reverse break-up fee: o comprador paga se desistir; o vendedor se não fechar"]
+      },
+    ]
+  },
+  {
+    id:"garantias", icon:"🔒", name:"Garantias e segurança",
+    desc:"Mecanismos que asseguram a capacidade de pagamento das partes ao longo da vigência.",
+    clauses:[
+      {
+        name:"Fiança bancária (on-demand)",power:"max",
+        text:`Como condição para a vigência deste Contrato, a Contratada deverá entregar, 
+no prazo de [10] dias úteis da assinatura, carta de fiança bancária de primeira linha 
+emitida por instituição financeira aceita pela Contratante, no valor de R$ [●], 
+com vigência de [●] meses e renovação automática, garantindo o fiel cumprimento 
+de todas as obrigações desta Contratada ("Garantia"). 
+A Contratante poderá executar a Garantia mediante simples solicitação ao banco emissor, 
+independentemente de notificação ou ação judicial ("on demand"), 
+hipótese em que a Contratada deverá restituir a Garantia no prazo de [5] dias.`,
+        why:"A fiança bancária on-demand é a garantia mais líquida disponível — o beneficiário aciona o banco sem precisar provar o inadimplemento. É o ouro das garantias contratuais.",
+        tips:["Exija banco de primeira linha (Bradesco, Itaú, Santander, BTG) — bancos menores podem não honrar","Inclua obrigação de renovação automática: se expirar antes do contrato, é inadimplemento","On-demand vs. condicional: on-demand é superiora — condicional requer prova do inadimplemento"],
+        flags:["Fiança bancária tem custo para o prestador (0,5% a 2% ao ano) — impacta precificação","Cuidado com bancos emissores em jurisdições diferentes: execução pode ser complexa"]
+      },
+      {
+        name:"Penhor e alienação fiduciária de recebíveis",power:"high",
+        text:`Em garantia das obrigações assumidas neste Contrato, a Parte Garantidora 
+constitui em favor da Parte Garantida penhor/alienação fiduciária sobre os recebíveis 
+[identificados no Anexo ●], representados por [duplicatas/CCBs/contratos identificados], 
+na forma dos arts. [1.431 CC / Lei 9.514/97], pelo prazo de vigência do presente 
+Contrato acrescido de [6 (seis)] meses. A Parte Garantida fica autorizada a registrar 
+o presente instrumento perante [cartório/entidade de registro] para os fins de publicidade 
+e oponibilidade a terceiros.`,
+        why:"Garantia real sobre recebíveis futuros é especialmente útil em contratos com empresas que têm fluxo de caixa previsível mas patrimônio imobilizado restrito.",
+        tips:["Registre sempre — garantia real sem registro não é oponível a terceiros","Identifique os recebíveis com precisão: devedor, valor aproximado, vencimento","Alienação fiduciária é mais forte que penhor — execução extrajudicial mais rápida"],
+        flags:["Recebíveis futuros precisam de cláusula específica de 'bens futuros'","Verificar se os recebíveis já não estão dados em garantia a banco (CRI/CRA)"]
+      },
+    ]
+  },
+  {
+    id:"confidencialidade", icon:"🔐", name:"Confidencialidade e PI",
+    desc:"Proteção do ativo mais valioso em relações de alto valor: o conhecimento proprietário.",
+    clauses:[
+      {
+        name:"NDA integrado com definição ampla",power:"high",
+        text:`As Partes se comprometem a manter em estrita confidencialidade toda e qualquer 
+informação recebida da outra Parte no âmbito deste Contrato ("Informação Confidencial"), 
+incluindo, sem limitação: dados financeiros, técnicos, estratégicos, de clientes, 
+de fornecedores, de precificação e de propriedade intelectual, em qualquer formato.
+A obrigação de confidencialidade: (i) vigora pelo prazo de [5 (cinco)] anos 
+após o encerramento do Contrato; (ii) não se aplica a informações que sejam 
+comprovadamente de domínio público sem culpa da Parte receptora, 
+já conhecidas anteriormente ou obtidas legitimamente de terceiro não vinculado.
+O descumprimento ensejará multa de R$ [●] por evento, sem prejuízo de perdas adicionais.`,
+        why:"NDA genérico é pouco eficaz. A definição ampla de 'informação confidencial' com prazo pós-contratual e multa por evento é o que garante proteção real.",
+        tips:["Multa por evento (não por período) cria desincentivo imediato","Inclua obrigação de destruição/devolução de suportes físicos e digitais na rescisão","Para dados de clientes: adicionar obrigações específicas de LGPD além do NDA"]
+      },
+      {
+        name:"Cessão de propriedade intelectual",power:"high",
+        text:`Toda e qualquer obra intelectual, software, metodologia, base de dados, 
+invenção ou criação desenvolvida pela Contratada no âmbito ou em decorrência 
+dos serviços objeto deste Contrato ("Trabalhos"), seja por empregados, 
+prestadores ou subcontratados da Contratada, será de titularidade exclusiva 
+da Contratante, independentemente de qualquer formalidade adicional. 
+A Contratada cede, de forma irrevogável, universal e gratuita (embutida na remuneração), 
+todos os direitos patrimoniais sobre os Trabalhos, incluindo o direito de usar, 
+reproduzir, modificar, sublicenciar e comercializar, em qualquer território, 
+pelo prazo máximo legal, em todos os meios e modalidades presentes e futuros.`,
+        why:"Sem cessão explícita, o prestador de serviços retém os direitos autorais sobre o que produziu — mesmo que pago para isso. Especialmente crítico em desenvolvimento de software.",
+        tips:["Inclua cessão dos direitos dos prestadores/subcontratados — faça o mesmo no contrato deles","Para software: adicione entrega do código-fonte e documentação técnica","'Todos os meios e modalidades presentes e futuros' cobre tecnologias não inventadas"]
+      },
+    ]
+  },
+];
+
+let activeCat = cats[0].id;
+
+function renderSidebar(){
+  const sb=document.getElementById("sidebar");
+  sb.innerHTML=cats.map(c=>`
+    <div class="sidebar-item${c.id===activeCat?" active":""}" onclick="selectCat('${c.id}')">
+      <span class="cat-icon">${c.icon}</span>
+      <span class="cat-name">${c.name}</span>
+      <span class="cat-count">${c.clauses.length}</span>
+    </div>`).join("");
+}
+
+function selectCat(id){
+  activeCat=id;
+  document.getElementById("search").value="";
+  renderSidebar();
+  const cat=cats.find(c=>c.id===id);
+  document.getElementById("main-title").textContent=cat.icon+" "+cat.name;
+  document.getElementById("main-desc").textContent=cat.desc;
+  renderClauses(cat.clauses);
+}
+
+function renderClauses(clauses){
+  const area=document.getElementById("clauses-area");
+  if(!clauses.length){area.innerHTML='<div class="empty">Nenhuma cláusula encontrada.</div>';return;}
+  area.innerHTML=clauses.map((cl,i)=>{
+    const pl={max:"🔴 Blindagem máxima",high:"🟡 Alta proteção",med:"🟢 Complementar"}[cl.power];
+    const pc={max:"p-max",high:"p-high",med:"p-med"}[cl.power];
+    const tips=(cl.tips||[]).map(t=>`<span class="tip">✓ ${t}</span>`).join("");
+    const flags=(cl.flags||[]).map(f=>`<span class="flag">⚠ ${f}</span>`).join("");
+    return `<div class="clause-card" id="cl-${i}" onclick="toggleClause(${i})">
+      <div class="clause-head">
+        <span class="clause-name">${cl.name}</span>
+        <span class="power ${pc}">${pl}</span>
+        <span class="chev">▾</span>
+      </div>
+      <div class="clause-body">
+        <div class="section-label">Texto-modelo</div>
+        <button class="copy-btn" onclick="event.stopPropagation();copyText(${i})">Copiar</button>
+        <div class="clause-text" id="ct-${i}">${cl.text.trim()}</div>
+        <div class="section-label" style="margin-top:12px">Por que é estratégica</div>
+        <div class="note">${cl.why}</div>
+        ${tips?`<div class="section-label" style="margin-top:10px">Como redigir bem</div><div class="tip-row">${tips}</div>`:""}
+        ${flags?`<div class="section-label" style="margin-top:10px">Atenção</div><div class="tip-row">${flags}</div>`:""}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function toggleClause(i){
+  const el=document.getElementById("cl-"+i);
+  el.classList.toggle("open");
+}
+
+function copyText(i){
+  const el=document.getElementById("ct-"+i);
+  navigator.clipboard.writeText(el.textContent.trim()).then(()=>{
+    const btn=el.previousElementSibling;
+    btn.textContent="Copiado ✓";
+    setTimeout(()=>{btn.textContent="Copiar"},2000);
+  });
+}
+
+function doSearch(q){
+  q=q.toLowerCase().trim();
+  if(!q){selectCat(activeCat);return;}
+  const all=cats.flatMap(c=>c.clauses);
+  const found=all.filter(cl=>
+    cl.name.toLowerCase().includes(q)||
+    cl.why.toLowerCase().includes(q)||
+    (cl.tips||[]).some(t=>t.toLowerCase().includes(q))
+  );
+  document.getElementById("main-title").textContent="Resultado da busca";
+  document.getElementById("main-desc").textContent=found.length+" cláusula(s) encontrada(s)";
+  document.querySelectorAll(".sidebar-item").forEach(s=>s.classList.remove("active"));
+  renderClauses(found);
+}
+
+selectCat(cats[0].id);
+</script>

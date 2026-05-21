@@ -1,0 +1,325 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.phase-nav{display:flex;gap:0;margin-bottom:20px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);overflow:hidden}
+.pn{flex:1;padding:8px 10px;font-size:11px;font-weight:500;cursor:pointer;background:var(--color-background-primary);color:var(--color-text-secondary);border:none;border-right:0.5px solid var(--color-border-secondary);transition:all .15s;text-align:center;line-height:1.3}
+.pn:last-child{border-right:none}
+.pn.on{background:var(--color-text-primary);color:var(--color-background-primary)}
+.section-intro{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:14px;padding:10px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:3px solid #534AB7;border-bottom-left-radius:0;border-top-left-radius:0}
+.products{display:flex;flex-direction:column;gap:10px}
+.prod{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;cursor:pointer;transition:border-color .15s}
+.prod:hover{border-color:var(--color-border-secondary)}
+.prod.open{border-color:#534AB7}
+.prod-head{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;padding:11px 14px;background:var(--color-background-secondary)}
+.prod-name{font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.3}
+.prod-sub{font-size:11px;color:var(--color-text-secondary);margin-top:2px;font-weight:400}
+.badges{display:flex;gap:4px;flex-direction:column;align-items:flex-end}
+.badge{font-size:10px;padding:2px 8px;border-radius:6px;font-weight:500;white-space:nowrap}
+.b-green{background:#E1F5EE;color:#085041}
+.b-purple{background:#EEEDFE;color:#3C3489}
+.b-amber{background:#FAEEDA;color:#633806}
+.b-coral{background:#FAECE7;color:#712B13}
+.b-gray{background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary)}
+.chev{font-size:11px;color:var(--color-text-tertiary);transition:transform .2s}
+.prod.open .chev{transform:rotate(180deg)}
+.prod-body{display:none;padding:14px 14px;border-top:0.5px solid var(--color-border-tertiary)}
+.prod.open .prod-body{display:block}
+.body-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.body-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px}
+.box-label{font-size:10px;color:var(--color-text-tertiary);font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.box-text{font-size:11px;color:var(--color-text-secondary);line-height:1.55}
+.box-text li{margin-left:14px;margin-bottom:3px}
+.joinville-box{background:#EEEDFE;border-radius:var(--border-radius-md);padding:10px 12px;margin-bottom:12px}
+.jv-label{font-size:10px;color:#3C3489;font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+.jv-text{font-size:11px;color:#3C3489;line-height:1.55}
+.escalada-box{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px;margin-bottom:12px}
+.esc-label{font-size:10px;color:var(--color-text-tertiary);font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.esc-steps{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.esc-step{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary);background:var(--color-background-primary)}
+.esc-arrow{font-size:12px;color:var(--color-text-tertiary)}
+.esc-step.highlight{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
+.ask-btn{font-size:11px;padding:6px 14px;cursor:pointer;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);width:100%;text-align:left}
+.ask-btn:hover{background:var(--color-background-secondary)}
+.meter-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.meter-label{font-size:11px;color:var(--color-text-secondary);width:110px;flex-shrink:0}
+.meter-bar{flex:1;height:5px;background:var(--color-border-tertiary);border-radius:3px;overflow:hidden}
+.meter-fill{height:100%;border-radius:3px}
+.fill-purple{background:#534AB7}
+.fill-teal{background:#1D9E75}
+.fill-amber{background:#BA7517}
+.meter-val{font-size:11px;color:var(--color-text-tertiary);width:28px;text-align:right}
+</style>
+
+<h2 class="sr-only">Produtos porta de entrada para empresas de Joinville: recuperação de créditos e outros produtos de curto prazo com escada para mandatos complexos</h2>
+
+<div style="padding:4px 0">
+<div class="phase-nav">
+  <button class="pn on" data-p="0" onclick="showPhase(0)">Fase 1 — Porta de entrada</button>
+  <button class="pn" data-p="1" onclick="showPhase(1)">Fase 2 — Aprofundamento</button>
+  <button class="pn" data-p="2" onclick="showPhase(2)">Fase 3 — Mandato estratégico</button>
+</div>
+<div id="phase-intro" class="section-intro"></div>
+<div class="products" id="products-list"></div>
+</div>
+
+<script>
+const phases=[
+  {
+    intro:"Produtos de resultado imediato e mensurável para o cliente — vendem-se sozinhos porque o ROI é claro antes mesmo de a proposta ser assinada. O objetivo não é o honorário desse produto: é a cadeira na sala de reunião.",
+    products:[
+      {
+        name:"Recuperação de créditos tributários",
+        sub:"PIS/COFINS, ICMS-ST, INSS sobre verbas indenizatórias",
+        retorno:"Imediato (30–120 dias)",
+        honorario:"25–35% sobre recuperado",
+        joinville:"Tupy, Tigre, Embraco/Nidec, Döhler, WEG: empresas de Lucro Real com folha e importação elevadas. Potencial de recuperação de R$500k a R$50M+ dependendo do porte e do tempo de prescrição.",
+        escalada:["Recuperação tributária","Due diligence tributária","Consultoria tributária preventiva","Planejamento tributário estrutural"],
+        escaladaIdx:0,
+        como:[
+          "Tese do Século (ICMS da base PIS/COFINS): apesar de consolidada, muitas empresas ainda não executaram o crédito",
+          "INSS sobre verbas indenizatórias (aviso prévio indenizado, férias proporcionais): tese consolidada no STJ",
+          "ICMS-ST pago a maior: recuperável nos últimos 5 anos via levantamento de notas",
+          "PIS/COFINS sobre insumos (conceito expandido pelo STJ): indústria de Joinville tem alto potencial"
+        ],
+        pitch:"Antes de assinar qualquer contrato, entrego um diagnóstico tributário gratuito de 30 dias. Se não encontrar nada, você não paga nada.",
+        scores:{velocidade:5,entrada:5,ticket:3}
+      },
+      {
+        name:"Revisão de classificação fiscal (NCM)",
+        sub:"Redução de II, IPI, PIS/COFINS de importação",
+        retorno:"Imediato (90–180 dias)",
+        honorario:"20–30% sobre economia anual projetada",
+        joinville:"Joinville importa máquinas, componentes e insumos industriais em volume altíssimo. Erro de NCM é comum e resulta em pagamento a maior de II e IPI — e em risco de autuação.",
+        escalada:["Revisão de NCM","Diagnóstico de comércio exterior","Consultoria de drawback e regimes especiais","Compliance aduaneiro permanente"],
+        escaladaIdx:0,
+        como:[
+          "Solicitar SISCOMEX dos últimos 5 anos: identifica NCMs utilizadas",
+          "Cruzar com tabela TIPI: erros de 2–4 dígitos são mais comuns do que parecem",
+          "Protocolo de retificação de DI + pedido de restituição de II pago a maior",
+          "Oportunidade de drawback: empresas que exportam e importam insumos pagam II desnecessariamente"
+        ],
+        pitch:"Mostre suas últimas 10 notas de importação. Em 48h entrego uma estimativa do que está sendo pago a mais.",
+        scores:{velocidade:4,entrada:5,ticket:3}
+      },
+      {
+        name:"Recuperação de FGTS e encargos trabalhistas",
+        sub:"Revisão de verbas, base de cálculo, multas e juros indevidos",
+        retorno:"Imediato (60–90 dias)",
+        honorario:"25–35% sobre recuperado ou economia",
+        joinville:"Empresas com alta rotatividade (indústria) ou com muitos desligamentos nos últimos anos têm frequentemente multas e encargos pagos a maior sobre bases incorretas.",
+        escalada:["Auditoria trabalhista","Reestruturação de RH preventiva","Defesa em reclamações trabalhistas","Due diligence trabalhista em M&A"],
+        escaladaIdx:0,
+        como:[
+          "Auditar folha dos últimos 5 anos: identificar verbas com incidência indevida de INSS e FGTS",
+          "Revisão de multa rescisória sobre 13º e férias: erro frequente em desligamentos em massa",
+          "Levantamento de reclamações trabalhistas finalizadas: identificar pagamentos em duplicidade",
+          "Produto de entrada: 'diagnóstico de compliance trabalhista' — grátis, gera relatório de risco"
+        ],
+        pitch:"Você provavelmente tem dinheiro na mesa na folha dos últimos 5 anos. Me dê acesso aos holerites e descubro em 30 dias.",
+        scores:{velocidade:4,entrada:4,ticket:3}
+      },
+      {
+        name:"Diagnóstico gratuito de passivo oculto",
+        sub:"Varredura tributária, trabalhista e societária — produto de conversão",
+        retorno:"Retorno ao escritório em 30–60 dias",
+        honorario:"Gratuito como porta de entrada; converte em retainer",
+        joinville:"Empresas de Joinville são reservadas mas pragmáticas: oferecer diagnóstico sem risco financeiro elimina a barreira do 'não te conheço'. É o produto de conversão do QI para o mérito técnico.",
+        escalada:["Diagnóstico gratuito","Relatório de riscos","Proposta de regularização","Mandato de consultoria preventiva"],
+        escaladaIdx:0,
+        como:[
+          "Escopo fixo e limitado: 3 áreas, 2 semanas, entrega de relatório executivo de 2 páginas",
+          "Apresentar ao CEO/CFO — não ao jurídico: o diagnóstico é financeiro, não legal",
+          "Relatório deve mostrar R$: quanto está em risco, quanto é recuperável",
+          "Limite claro: diagnóstico ≠ due diligence; a profundidade justifica a contratação do próximo produto"
+        ],
+        pitch:"Fazemos um raio-X da sua operação em 2 semanas. Se não acharmos nada de relevante, você ficou com a segurança de saber. Se acharmos, você decide o que fazer.",
+        scores:{velocidade:5,entrada:5,ticket:1}
+      },
+    ]
+  },
+  {
+    intro:"Com a primeira recuperação entregue, o cliente passou a te ver como 'quem trouxe dinheiro'. Esse capital de confiança abre as portas para produtos de relacionamento recorrente e ticket maior.",
+    products:[
+      {
+        name:"Retainer de compliance tributário preventivo",
+        sub:"Revisão mensal de obrigações acessórias e alertas de risco",
+        retorno:"Recorrente mensal",
+        honorario:"R$3k–R$15k/mês dependendo do porte",
+        joinville:"Depois de recuperar crédito, o CFO não quer correr o mesmo risco novamente. O retainer preventivo é a venda natural: 'para não precisar recuperar outra vez'.",
+        escalada:["Recuperação tributária","Retainer tributário","Planejamento fiscal estrutural","Reestruturação societária"],
+        escaladaIdx:1,
+        como:[
+          "Propor ao CFO logo após a entrega da recuperação — o momento é o pico de confiança",
+          "Escopo claro: revisão do SPED, alertas de risco, parecer mensal, 1 reunião por trimestre",
+          "Inclua monitoramento de jurisprudência: novas teses = novas recuperações = novo sucesso para o cliente",
+          "Retainer de 12 meses com renovação automática: receita previsível para o escritório"
+        ],
+        pitch:"A recuperação mostrou que havia riscos que ninguém viu. O retainer garante que isso não volta a acontecer — e que você será o primeiro a saber quando surgir uma nova oportunidade.",
+        scores:{velocidade:3,entrada:3,ticket:3}
+      },
+      {
+        name:"Due diligence trabalhista e reestruturação de RH",
+        sub:"Regularização de vínculos, revisão de plano de cargos e PLR",
+        retorno:"3–6 meses",
+        honorario:"R$30k–R$150k dependendo do porte",
+        joinville:"Indústria joinvilense tem alta presença de PJs, terceirizados e histórico de desligamentos em massa (especialmente pós-pandemia). O passivo trabalhista oculto é enorme e sistemático.",
+        escalada:["Auditoria trabalhista","Reestruturação RH","Defesa em reclamações","Compliance trabalhista permanente"],
+        escaladaIdx:1,
+        como:[
+          "Produto de entrada: 'mapeamento de risco trabalhista' — escopo de 30 dias, entrega relatório",
+          "Foco em PJs com risco de vínculo: critério de pessoalidade + habitualidade + subordinação",
+          "Propor regularização preventiva antes de processo judicial: custo da regularização << custo do processo",
+          "Estruturar PLR e stock options corretamente: protege a empresa e fideliza o executivo"
+        ],
+        pitch:"Cada PJ irregular na sua folha é uma ação trabalhista potencial. Antes que bata, vamos ver o que está exposto.",
+        scores:{velocidade:3,entrada:4,ticket:3}
+      },
+      {
+        name:"Contratos estratégicos e revisão de portfólio",
+        sub:"Revisão de contratos de fornecimento, distribuidores e clientes-âncora",
+        retorno:"2–4 meses",
+        honorario:"R$20k–R$100k por portfólio",
+        joinville:"Empresas industriais de Joinville têm contratos de fornecimento e distribuição que nunca passaram por revisão jurídica séria. Cláusulas de exclusividade mal redigidas, ausência de cap de responsabilidade e change of control são o padrão.",
+        escalada:["Revisão de contratos","Biblioteca de cláusulas","Due diligence contratual","M&A assessment"],
+        escaladaIdx:1,
+        como:[
+          "Produto de entrada: 'revisão dos 5 contratos mais críticos' — tempo fixo, preço fixo",
+          "Critério de seleção: contratos que representam >20% da receita ou do custo",
+          "Entregar redlining comentado: o cliente vê o trabalho, não apenas a conclusão",
+          "Identificar cláusulas de change of control: conecta organicamente ao tema de M&A e sucessão"
+        ],
+        pitch:"Seus contratos principais foram redigidos por quem? E revisados quando? Cada cláusula mal escrita é um passivo que ainda não foi acionado.",
+        scores:{velocidade:3,entrada:4,ticket:3}
+      },
+    ]
+  },
+  {
+    intro:"Com histórico de entregas e confiança construída, o cliente enxerga o escritório como advisor estratégico — não como prestador de serviço pontual. Aqui estão os mandatos de alto ticket e longa duração.",
+    products:[
+      {
+        name:"Assessoria em M&A e reestruturação societária",
+        sub:"Fusões, aquisições, reorganizações e sucessão empresarial",
+        retorno:"6–18 meses por operação",
+        honorario:"R$150k–R$2M+ por operação",
+        joinville:"O parque industrial de Joinville está em fase de consolidação e sucessão geracional. Famílias empresárias de 2ª e 3ª geração precisam de estruturação — e confiam no advogado que já 'trouxe dinheiro'.",
+        escalada:["Recuperação tributária","Retainer preventivo","Due diligence","M&A / Sucessão"],
+        escaladaIdx:3,
+        como:[
+          "A indicação vem naturalmente: 'você que cuida do nosso tributário, pode nos ajudar com essa negociação?'",
+          "Joinville tem várias empresas familiares (Tigre, Döhler, Schuler, Wetzel) em transição geracional",
+          "Oferecer: mapeamento de estrutura societária + assessment de prontidão para M&A",
+          "Conectar com os fundos (FIP) que você está estruturando: o cliente vira o alvo do fundo — ou o vendedor"
+        ],
+        pitch:"",
+        scores:{velocidade:1,entrada:2,ticket:5}
+      },
+      {
+        name:"General Counsel terceirizado (GC-as-a-Service)",
+        sub:"Diretor jurídico externo em regime de retainer estratégico",
+        retorno:"Recorrente mensal de longo prazo",
+        honorario:"R$15k–R$60k/mês",
+        joinville:"Empresas de R$50M–R$500M de faturamento em Joinville raramente têm jurídico interno estruturado. O GC terceirizado é o mandato mais estratégico e recorrente que um boutique pode conquistar.",
+        escalada:["Retainer tributário","Contratos estratégicos","Due diligence","GC terceirizado"],
+        escaladaIdx:3,
+        como:[
+          "Posicionar após 12 meses de retainer: 'em vez de consultas pontuais, que tal uma cadeira nas reuniões de diretoria?'",
+          "Escopo: reunião mensal de diretoria, aprovação de contratos acima de R$X, alertas regulatórios, coordenação de litígios",
+          "Diferencial: o GC de um boutique multidisciplinar entrega mais do que um advogado empregado generalista",
+          "Ticket justificado: custo de um advogado CLT sênior em Joinville é R$15k–R$25k/mês sem encargos"
+        ],
+        pitch:"",
+        scores:{velocidade:1,entrada:2,ticket:5}
+      },
+      {
+        name:"Estruturação de fundos e gestão de patrimônio",
+        sub:"FIP, FIDC e FII para empresas e famílias do portfólio",
+        retorno:"12–36 meses para estruturação",
+        honorario:"Honorário de estruturação + taxa de gestão recorrente",
+        joinville:"Empresários que venderam empresas ou que têm patrimônio relevante precisam de estrutura para o capital. Você que fez a venda faz também a gestão do produto da venda.",
+        escalada:["M&A / Sucessão","Holding patrimonial","Estruturação de fundo","Gestão recorrente"],
+        escaladaIdx:3,
+        como:[
+          "O cliente que vendeu a empresa precisa de um gestor para o caixa: você está na posição ideal",
+          "FIP para co-investimento em outros ativos de Joinville: cria comunidade de investidores do seu portfólio",
+          "FIDC para empresas do portfólio que têm recebíveis: monetização de caixa com gestão da sua gestora",
+          "Receita dupla: honorário legal da estruturação + taxa de administração da gestora"
+        ],
+        pitch:"",
+        scores:{velocidade:1,entrada:1,ticket:5}
+      },
+    ]
+  },
+];
+
+let currentPhase=0;
+let openProds=new Set();
+
+function showPhase(idx){
+  currentPhase=idx;
+  openProds.clear();
+  document.querySelectorAll(".pn").forEach((b,i)=>{b.classList.toggle("on",i===idx)});
+  render();
+}
+
+function toggleProd(id){
+  if(openProds.has(id)) openProds.delete(id); else openProds.add(id);
+  render();
+}
+
+function scoreBar(val,fillClass){
+  const pct=Math.round(val/5*100);
+  return `<div class="meter-fill ${fillClass}" style="width:${pct}%"></div>`;
+}
+
+function render(){
+  const phase=phases[currentPhase];
+  document.getElementById("phase-intro").textContent=phase.intro;
+  const list=document.getElementById("products-list");
+  list.innerHTML=phase.products.map((p,i)=>{
+    const id="p"+currentPhase+"-"+i;
+    const isOpen=openProds.has(id);
+    const steps=p.escalada.map((s,si)=>`<span class="esc-step${si===p.escaladaIdx?" highlight":""}">${s}</span>${si<p.escalada.length-1?'<span class="esc-arrow">→</span>':""}`).join("");
+    const como=p.como.map(c=>`<li>${c}</li>`).join("");
+    return `<div class="prod${isOpen?" open":""}" onclick="toggleProd('${id}')">
+      <div class="prod-head">
+        <div>
+          <div class="prod-name">${p.name}</div>
+          <div class="prod-sub">${p.sub}</div>
+        </div>
+        <div class="badges">
+          <span class="badge b-green">${p.retorno}</span>
+          <span class="badge b-purple">${p.honorario}</span>
+        </div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="prod-body">
+        <div class="joinville-box">
+          <div class="jv-label"><i class="ti ti-building-factory-2" aria-hidden="true" style="font-size:12px;margin-right:4px"></i>Contexto Joinville</div>
+          <div class="jv-text">${p.joinville}</div>
+        </div>
+        <div class="body-grid">
+          <div class="body-box">
+            <div class="box-label">Como executar</div>
+            <div class="box-text"><ul>${como}</ul></div>
+          </div>
+          <div class="body-box">
+            <div class="box-label">Métricas do produto</div>
+            <div class="meter-row"><span class="meter-label">Velocidade de caixa</span><div class="meter-bar">${scoreBar(p.scores.velocidade,"fill-teal")}</div><span class="meter-val">${p.scores.velocidade}/5</span></div>
+            <div class="meter-row"><span class="meter-label">Facilidade de entrada</span><div class="meter-bar">${scoreBar(p.scores.entrada,"fill-purple")}</div><span class="meter-val">${p.scores.entrada}/5</span></div>
+            <div class="meter-row"><span class="meter-label">Ticket do produto</span><div class="meter-bar">${scoreBar(p.scores.ticket,"fill-amber")}</div><span class="meter-val">${p.scores.ticket}/5</span></div>
+            ${p.pitch?`<div style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)"><div class="box-label">Pitch de abordagem</div><div class="box-text" style="font-style:italic">"${p.pitch}"</div></div>`:""}
+          </div>
+        </div>
+        <div class="escalada-box">
+          <div class="esc-label"><i class="ti ti-stairs-up" aria-hidden="true" style="font-size:12px;margin-right:4px"></i>Escada para o mandato estratégico</div>
+          <div class="esc-steps">${steps}</div>
+        </div>
+        <button class="ask-btn" onclick="event.stopPropagation();sendPrompt('Quero montar uma proposta comercial e um pitch de abordagem para o produto de ${p.name} voltado para empresas industriais de Joinville. Como estruturar a oferta, o modelo de honorários e a apresentação?')">Montar proposta para este produto ↗</button>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+render();
+</script>

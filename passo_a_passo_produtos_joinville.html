@@ -1,0 +1,434 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.wrap{display:grid;grid-template-columns:210px 1fr;min-height:600px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.sb{background:var(--color-background-secondary);border-right:0.5px solid var(--color-border-tertiary);overflow-y:auto}
+.ph-label{font-size:9px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;padding:10px 12px 4px}
+.sb-item{padding:8px 12px;cursor:pointer;border-bottom:0.5px solid var(--color-border-tertiary);transition:background .12s}
+.sb-item:hover{background:var(--color-background-primary)}
+.sb-item.active{background:var(--color-background-primary);border-left:2px solid #534AB7}
+.sb-name{font-size:12px;font-weight:500;color:var(--color-text-primary);line-height:1.3}
+.sb-tag{font-size:10px;color:var(--color-text-tertiary);margin-top:2px}
+.main{overflow-y:auto;padding:16px 18px}
+.prod-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.prod-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.meta-badge{font-size:10px;padding:2px 9px;border-radius:6px;font-weight:500}
+.mb-green{background:#E1F5EE;color:#085041}
+.mb-purple{background:#EEEDFE;color:#3C3489}
+.mb-amber{background:#FAEEDA;color:#633806}
+.mb-coral{background:#FAECE7;color:#712B13}
+.steps-wrap{display:flex;flex-direction:column;gap:0}
+.step-row{display:grid;grid-template-columns:32px 1fr;gap:0}
+.step-left{display:flex;flex-direction:column;align-items:center}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;z-index:1}
+.sn-purple{background:#EEEDFE;color:#3C3489}
+.sn-teal{background:#E1F5EE;color:#085041}
+.sn-amber{background:#FAEEDA;color:#633806}
+.sn-coral{background:#FAECE7;color:#712B13}
+.step-line{flex:1;width:1px;background:var(--color-border-tertiary);margin:4px 0}
+.step-row:last-child .step-line{display:none}
+.step-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px;margin-bottom:10px;margin-left:8px}
+.step-heading{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.step-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:6px}
+.step-meta-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sm{font-size:10px;padding:2px 8px;border-radius:5px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+.entregavel{background:var(--color-background-secondary);border-radius:6px;padding:6px 10px;margin-top:6px}
+.ent-label{font-size:9px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.ent-item{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.ent-item::before{content:"→ ";color:var(--color-text-tertiary)}
+.next-box{margin-top:16px;padding:10px 14px;background:#EEEDFE;border-radius:var(--border-radius-md)}
+.next-label{font-size:10px;font-weight:500;color:#3C3489;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.next-text{font-size:12px;color:#3C3489;line-height:1.55}
+.ask-btn{font-size:11px;padding:6px 14px;cursor:pointer;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);width:100%;text-align:left;margin-top:12px}
+.ask-btn:hover{background:var(--color-background-secondary)}
+.flag-box{background:#FAECE7;border-radius:var(--border-radius-md);padding:8px 12px;margin-top:8px}
+.flag-label{font-size:9px;font-weight:500;color:#712B13;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.flag-text{font-size:11px;color:#712B13;line-height:1.55}
+</style>
+
+<h2 class="sr-only">Passo a passo detalhado de cada produto porta de entrada e mandato estratégico para escritório boutique em Joinville</h2>
+
+<div class="wrap">
+<div class="sb" id="sb"></div>
+<div class="main" id="main"></div>
+</div>
+
+<script>
+const products=[
+  {phase:"Fase 1 — Porta de entrada",phaseColor:"sn-purple",
+   name:"Recuperação de créditos tributários",tag:"PIS/COFINS · ICMS-ST · INSS",
+   retorno:"30–120 dias",honorario:"25–35% sobre recuperado",dificuldade:"Baixa",
+   nextProduct:"Retainer tributário preventivo",
+   nextReason:"Após entregar dinheiro ao cliente, a oferta natural é: 'para isso não acontecer de novo, precisamos de um monitoramento contínuo'.",
+   steps:[
+     {n:"1",color:"sn-purple",title:"Prospecção e abordagem inicial",prazo:"Dia 1",
+      desc:"Identificar empresas-alvo pelo porte (Lucro Real, faturamento >R$10M) e setor (indústria, comércio atacado). Em Joinville: metalurgia, plástico, têxtil, eletroeletrônico. Abordagem: CFO ou controller, não o jurídico.",
+      entregaveis:["E-mail de abordagem com pergunta de abertura: 'vocês já revisaram o PIS/COFINS pós-Tese do Século?'","Proposta de diagnóstico sem custo — tempo fixo de 2 semanas"],
+      metas:["Reunião de 30 minutos com CFO/controller"]},
+     {n:"2",color:"sn-purple",title:"Coleta de dados e levantamento",prazo:"Semanas 1–2",
+      desc:"Solicitar: SPEDs Fiscal e Contribuições dos últimos 5 anos, ECF, guias de DARF, folha de pagamento, notas de importação (se houver). O controller normalmente entrega sem resistência — é dado contábil, não confidencial estratégico.",
+      entregaveis:["Checklist de documentos (1 página) para enviar ao controller","Acesso ao e-CAC via procuração eletrônica"],
+      metas:["Entrega completa de documentos em até 10 dias úteis"]},
+     {n:"3",color:"sn-purple",title:"Análise e identificação de créditos",prazo:"Semanas 2–4",
+      desc:"Cruzar dados do SPED com as teses aplicáveis: (a) ICMS da base do PIS/COFINS — Tese do Século, RE 574.706; (b) INSS sobre verbas indenizatórias — aviso prévio, férias proporcionais; (c) ICMS-ST pago a maior — comparar GIA-ST com notas; (d) PIS/COFINS sobre insumos — conceito expandido pelo STJ.",
+      entregaveis:["Planilha de levantamento por tese e período","Estimativa de crédito por categoria — valor bruto e líquido (descontando honorários)"],
+      metas:["Estimativa confiável antes de apresentar ao cliente"]},
+     {n:"4",color:"sn-purple",title:"Apresentação do relatório e proposta",prazo:"Semana 3–4",
+      desc:"Reunião com CFO e, se possível, CEO ou sócio. Apresentar relatório executivo de 2 páginas: quanto existe a recuperar, por qual tese, qual o risco da operação e qual o prazo esperado. Proposta de honorários de êxito.",
+      entregaveis:["Relatório executivo de 2 páginas — linguagem financeira, não jurídica","Proposta de honorários: % sobre o recuperado, sem custo de entrada"],
+      metas:["Assinatura do contrato de prestação de serviços com procuração"],
+      flag:"Não apresente o relatório sem a proposta assinada na mesma reunião. O relatório é o produto — sem contrato, você entregou de graça."},
+     {n:"5",color:"sn-purple",title:"Execução — via administrativa",prazo:"Meses 1–3",
+      desc:"Protocolar PER/DCOMP (Pedido Eletrônico de Restituição, Ressarcimento e Declaração de Compensação) no e-CAC. Para ICMS-ST: GIA-ST retificadora junto à SEFAZ-SC. Para INSS: DCTFWeb retificadora + PER/DCOMP. Acompanhar no sistema — prazos de análise variam de 30 a 360 dias.",
+      entregaveis:["Protocolo de cada PER/DCOMP com número de controle","Relatório de acompanhamento mensal ao CFO"],
+      metas:["Homologação ou compensação efetiva dos créditos"]},
+     {n:"6",color:"sn-purple",title:"Entrega e cobrança dos honorários",prazo:"Mês 3–6",
+      desc:"Quando o crédito for homologado ou compensado, emitir NF de honorários sobre o valor recuperado. Apresentar relatório final consolidado. Reunião de encerramento é o momento de ouro — cliente está satisfeito e aberto.",
+      entregaveis:["Relatório final de recuperação","Nota fiscal de honorários (25–35% do recuperado)","Proposta de retainer preventivo"],
+      metas:["Honorários recebidos","Proposta de retainer na mesa"]}
+   ]},
+  {phase:"Fase 1 — Porta de entrada",phaseColor:"sn-purple",
+   name:"Revisão de classificação fiscal (NCM)",tag:"Importação · II · IPI · PIS/COFINS importação",
+   retorno:"90–180 dias",honorario:"20–30% sobre economia anual",dificuldade:"Baixa",
+   nextProduct:"Compliance aduaneiro permanente",
+   nextReason:"A empresa que tem histórico de erros de NCM sabe que precisa de monitoramento: cada nova importação é um novo risco.",
+   steps:[
+     {n:"1",color:"sn-purple",title:"Identificação de empresas importadoras",prazo:"Dia 1",
+      desc:"Joinville tem um dos maiores volumes de importação industrial de SC — máquinas, componentes e insumos. Consultar Radar Siscomex público ou MDIC para identificar importadores ativos. Abordagem: gerente de supply chain ou controller.",
+      entregaveis:["Lista de importadores-alvo em Joinville por setor","E-mail de abordagem: 'você sabe qual é o risco do NCM incorreto na sua última importação?'"],
+      metas:["Reunião de diagnóstico com o responsável por importação"]},
+     {n:"2",color:"sn-purple",title:"Levantamento de DIs dos últimos 5 anos",prazo:"Semanas 1–2",
+      desc:"Solicitar extrato de DIs (Declarações de Importação) via SISCOMEX — a própria empresa tem acesso. Listar todas as NCMs utilizadas, valor aduaneiro e impostos recolhidos. Cruzar com tabela TIPI vigente em cada período.",
+      entregaveis:["Planilha de DIs por NCM e período","Mapeamento de NCMs com maior volume financeiro (foco dos próximos passos)"],
+      metas:["Base de dados completa para análise"]},
+     {n:"3",color:"sn-purple",title:"Análise técnica das NCMs",prazo:"Semanas 2–4",
+      desc:"Verificar se a NCM declarada corresponde à descrição técnica do produto importado. Erros comuns: (a) usar NCM genérica quando existe NCM específica com alíquota menor; (b) erro de nível — 4 dígitos corretos, 6 ou 8 errados; (c) NCM desatualizada após alteração da TIPI. Parceria com despachante aduaneiro especializado é fundamental.",
+      entregaveis:["Relatório de NCMs com risco de classificação incorreta","Estimativa de II e IPI pagos a maior por NCM e período"],
+      metas:["Identificar oportunidade de recuperação e/ou risco de autuação"]},
+     {n:"4",color:"sn-purple",title:"Estratégia de recuperação ou defesa",prazo:"Semana 4",
+      desc:"Dois cenários: (a) NCM incorreta resultou em pagamento a maior — protocolar retificação de DI + PER/DCOMP; (b) NCM incorreta resultou em pagamento a menor — regularização preventiva antes de fiscalização, negociação com SRFB. O segundo cenário também é produto: defesa preventiva.",
+      entregaveis:["Parecer jurídico com estratégia recomendada","Proposta de honorários de êxito para recuperação OU honorários fixos para defesa preventiva"],
+      metas:["Contrato assinado para execução"]},
+     {n:"5",color:"sn-purple",title:"Execução administrativa",prazo:"Meses 2–5",
+      desc:"Retificação das DIs junto à Receita Federal via Siscomex. PER/DCOMP para II e IPI pagos a maior. Para PIS/COFINS de importação: DCTFWeb retificadora. Prazo de análise pela SRFB: 30 a 180 dias dependendo do valor.",
+      entregaveis:["Protocolos de cada retificação","Relatório de acompanhamento quinzenal"],
+      metas:["Homologação das retificações e restituição ou compensação"]},
+     {n:"6",color:"sn-purple",title:"Consultoria prospectiva de NCM",prazo:"Mês 5–6",
+      desc:"Após a recuperação, oferecer revisão de NCM das próximas importações antes do embarque — evita repetição do problema. Este é o produto de entrada para o retainer de compliance aduaneiro.",
+      entregaveis:["Manual de NCMs corretas para os produtos habitualmente importados pela empresa","Proposta de consultoria prospectiva: revisão por embarque ou pacote mensal"],
+      metas:["Contrato de compliance aduaneiro recorrente"]}
+   ]},
+  {phase:"Fase 1 — Porta de entrada",phaseColor:"sn-purple",
+   name:"Recuperação de FGTS e encargos trabalhistas",tag:"INSS · FGTS · Verbas rescisórias",
+   retorno:"60–90 dias",honorario:"25–35% sobre recuperado",dificuldade:"Baixa",
+   nextProduct:"Reestruturação de RH preventiva",
+   nextReason:"A empresa que descobriu que pagou encargos incorretos por anos quer evitar que isso continue. O retainer trabalhista é a venda natural.",
+   steps:[
+     {n:"1",color:"sn-purple",title:"Abordagem via RH ou controller",prazo:"Dia 1",
+      desc:"Empresas industriais com alta rotatividade (comum em Joinville) têm maior probabilidade de encargos incorretos. Abordagem: gerente de RH ou controller com a pergunta: 'sua folha já passou por auditoria nos últimos 5 anos?'",
+      entregaveis:["Script de abordagem focado em RH e controller","Proposta de diagnóstico gratuito de 2 semanas"],
+      metas:["Acesso à folha de pagamento dos últimos 5 anos"]},
+     {n:"2",color:"sn-purple",title:"Levantamento da folha e rescisões",prazo:"Semanas 1–2",
+      desc:"Solicitar: folha de pagamento completa dos últimos 5 anos, guias de DARF de INSS e FGTS, GFIP/eSocial, termos de rescisão (TRCT) de todos os desligamentos. Foco especial em desligamentos em massa e em verbas variáveis.",
+      entregaveis:["Checklist de documentos para RH","Tabela de verbas por natureza (tributável x não tributável)"],
+      metas:["Base de dados completa para análise"]},
+     {n:"3",color:"sn-purple",title:"Identificação de incidências indevidas",prazo:"Semanas 2–3",
+      desc:"Verificar: (a) INSS sobre aviso prévio indenizado — indevido (Súmula 478 STJ); (b) INSS sobre férias proporcionais na rescisão sem justa causa — indevido; (c) FGTS sobre 13º proporcional na rescisão — verificar cálculo; (d) multa rescisória sobre base incorreta — erro frequente em desligamentos coletivos.",
+      entregaveis:["Planilha de incidências indevidas por verba e por período","Estimativa de recuperação bruta e líquida"],
+      metas:["Quantificação confiável antes da apresentação"]},
+     {n:"4",color:"sn-purple",title:"Apresentação e contratação",prazo:"Semana 3",
+      desc:"Reunião com RH e controller. Apresentar em linguagem financeira: 'vocês pagaram R$X a mais de INSS nos últimos 5 anos por incidência sobre verbas que a jurisprudência consolidou como não tributáveis'. Proposta de êxito.",
+      entregaveis:["Relatório executivo de diagnóstico","Proposta de honorários de êxito: 25–35% do recuperado"],
+      metas:["Contrato assinado"],
+      flag:"Incluir no contrato cláusula de que os documentos fornecidos são verídicos — protege o escritório de dados inconsistentes fornecidos pelo cliente."},
+     {n:"5",color:"sn-purple",title:"Execução — GFIP/eSocial retificadoras",prazo:"Meses 1–3",
+      desc:"Protocolar DCTFWeb ou GFIP retificadoras para os períodos com incidência indevida. PER/DCOMP para restituição ou compensação de INSS. Para FGTS: requerimento junto à CEF via Conectividade Social.",
+      entregaveis:["Protocolos de cada GFIP/DCTFWeb retificadora","Relatório de acompanhamento mensal ao RH e controller"],
+      metas:["Homologação e restituição ou compensação"]},
+     {n:"6",color:"sn-purple",title:"Entrega e proposta de prevenção",prazo:"Mês 3–5",
+      desc:"Reunião de encerramento com relatório consolidado. Honorários sobre o recuperado. Proposta de auditoria preventiva da folha: revisão trimestral para evitar novos erros de incidência.",
+      entregaveis:["Relatório final de recuperação","NF de honorários","Proposta de retainer de compliance trabalhista"],
+      metas:["Honorários recebidos","Retainer na mesa"]}
+   ]},
+  {phase:"Fase 1 — Porta de entrada",phaseColor:"sn-purple",
+   name:"Diagnóstico gratuito de passivo oculto",tag:"Produto de conversão — sem custo ao cliente",
+   retorno:"Conversão em 30–60 dias",honorario:"Gratuito — converte em mandato pago",dificuldade:"Mínima",
+   nextProduct:"Qualquer produto da Fase 1 ou 2",
+   nextReason:"O diagnóstico não tem produto próprio: ele é o caminho para o primeiro produto pago. O relatório deve sempre apontar para um próximo passo específico.",
+   steps:[
+     {n:"1",color:"sn-purple",title:"Definir o escopo fixo do diagnóstico",prazo:"Antes da abordagem",
+      desc:"O diagnóstico gratuito precisa de escopo rígido para não virar trabalho ilimitado. Definir: 3 áreas (tributário, trabalhista, contratos), 2 semanas, entrega de relatório executivo de 2 páginas. Não é due diligence — é triagem.",
+      entregaveis:["Documento interno: 'escopo padrão do diagnóstico' — o que inclui e o que não inclui","Template de NDA para assinar antes de receber documentos"],
+      metas:["Processo interno documentado antes de sair a campo"]},
+     {n:"2",color:"sn-purple",title:"Abordagem e agendamento",prazo:"Dia 1",
+      desc:"Abordagem direta ao CFO, controller ou sócio. A frase de abertura é financeira, não jurídica: 'posso identificar em 2 semanas o que está em risco e o que pode ser recuperado — sem custo inicial. Se não achar nada relevante, você ficou com a segurança de saber.' Joinville: abordar eventos de associações (ACIJ, FIESC, Câmara de Comércio).",
+      entregaveis:["Script de abordagem (e-mail, LinkedIn, evento presencial)","Proposta de diagnóstico de 1 página"],
+      metas:["Reunião de 30 minutos e acesso aos documentos"]},
+     {n:"3",color:"sn-purple",title:"Coleta de documentos mínimos",prazo:"Dias 2–5",
+      desc:"Solicitar apenas o essencial: 3 últimas ECFs, folha dos últimos 12 meses, 3 contratos mais críticos (por valor ou duração). Não pedir mais do que isso — o volume grande assusta. NDA assinado antes de receber qualquer coisa.",
+      entregaveis:["Checklist de 1 página com os 5 documentos solicitados","NDA simples assinado"],
+      metas:["Documentos recebidos em até 5 dias úteis"]},
+     {n:"4",color:"sn-purple",title:"Análise de triagem",prazo:"Dias 5–12",
+      desc:"Varredura de alto nível em cada área. Tributário: verificar regime, SPED, parcelamentos e teses aplicáveis. Trabalhista: identificar PJs com perfil de vínculo e verbas com incidência potencialmente indevida. Contratos: identificar cláusulas ausentes de cap, change of control e arbitragem.",
+      entregaveis:["Planilha interna de achados por área","Quantificação estimada do passivo e do potencial de recuperação"],
+      metas:["Pelo menos um achado relevante em cada área"]},
+     {n:"5",color:"sn-purple",title:"Relatório executivo de 2 páginas",prazo:"Dias 12–14",
+      desc:"O relatório deve mostrar R$, não parágrafos jurídicos. Estrutura: (1) resumo do que foi analisado; (2) tabela de achados com valor estimado de risco e de recuperação; (3) recomendação de próximo passo para cada achado. A linguagem é de consultoria financeira, não de parecer jurídico.",
+      entregaveis:["Relatório executivo de 2 páginas (PDF)","Apresentação de 5 slides para a reunião de entrega"],
+      metas:["Reunião de entrega agendada ainda durante a análise"]},
+     {n:"6",color:"sn-purple",title:"Reunião de entrega e conversão",prazo:"Dia 14–15",
+      desc:"Apresentar o relatório ao CFO e CEO. Para cada achado, ter uma proposta específica pronta. Não apresentar 'um pacote geral' — apresentar um próximo passo concreto por achado. O objetivo da reunião é sair com pelo menos um contrato assinado ou em negociação.",
+      entregaveis:["Relatório entregue","Propostas específicas por achado (recuperação tributária, retainer trabalhista, revisão de contratos)"],
+      metas:["Ao menos uma proposta em negociação ao sair da reunião"],
+      flag:"Nunca entregue o relatório por e-mail sem a reunião presencial. O relatório sem contexto vira commodity — o valor está na apresentação e no próximo passo que você propõe."}
+   ]},
+  {phase:"Fase 2 — Aprofundamento",phaseColor:"sn-teal",
+   name:"Retainer de compliance tributário preventivo",tag:"Monitoramento mensal · Alertas · Pareceres",
+   retorno:"Recorrente mensal",honorario:"R$3k–R$15k/mês",dificuldade:"Baixa (pós recuperação)",
+   nextProduct:"Planejamento tributário estrutural",
+   nextReason:"Com o monitoramento contínuo, você identifica oportunidades de reestruturação que um olhar pontual não veria — e o cliente já confia no seu trabalho.",
+   steps:[
+     {n:"2",color:"sn-teal",title:"Proposta no pico de confiança",prazo:"Na entrega da recuperação",
+      desc:"O momento certo é imediatamente após a entrega do dinheiro recuperado — não semanas depois. A lógica para o cliente é simples: 'você tinha crédito que não sabia. Para garantir que isso não aconteça de novo e que você seja o primeiro a saber de novas oportunidades, fazemos isso continuamente.'",
+      entregaveis:["Proposta de retainer de 1 página com escopo claro e valor mensal fixo","Contrato de 12 meses com renovação automática"],
+      metas:["Assinatura ainda na reunião de encerramento da recuperação"]},
+     {n:"3",color:"sn-teal",title:"Definição do escopo e rotina",prazo:"Mês 1",
+      desc:"Escopo padrão do retainer tributário: (a) revisão mensal do SPED Contribuições e Fiscal; (b) monitoramento de jurisprudência relevante (CARF, STJ, STF); (c) alerta imediato de novas teses aplicáveis; (d) parecer trimestral de risco; (e) 1 reunião trimestral com CFO. Fora do escopo: contencioso, recuperação de novos créditos (cobrar separado).",
+      entregaveis:["Documento de escopo e SLA do retainer","Acesso permanente ao e-CAC via procuração"],
+      metas:["Rotina de trabalho estabelecida e primeiro relatório mensal entregue"]},
+     {n:"4",color:"sn-teal",title:"Entrega mensal — relatório de 1 página",prazo:"Todo mês",
+      desc:"O relatório mensal precisa ser curto e financeiro: o que foi revisado, o que mudou na jurisprudência, qual o risco atual e qual a recomendação. CFOs não leem relatórios longos. O objetivo é que o cliente sinta o valor todo mês — mesmo quando 'nada aconteceu'.",
+      entregaveis:["Relatório mensal de 1 página (PDF)","Alertas por WhatsApp/e-mail para mudanças urgentes"],
+      metas:["Taxa de abertura do relatório mensal — proxy de engajamento do cliente"]},
+     {n:"5",color:"sn-teal",title:"Reunião trimestral de valor",prazo:"A cada 3 meses",
+      desc:"A reunião trimestral é onde o retainer se justifica para o CFO e para o sócio. Apresentar: o que foi monitorado, as teses novas identificadas, o passivo atual estimado e a oportunidade de próxima recuperação ou otimização. É também o momento de apresentar produtos adjacentes.",
+      entregaveis:["Apresentação trimestral de 5 slides","Proposta de novo produto (se houver oportunidade identificada)"],
+      metas:["Renovação antecipada ao fim de cada contrato de 12 meses"]},
+     {n:"6",color:"sn-teal",title:"Expansão para planejamento estrutural",prazo:"Mês 9–12",
+      desc:"Com 9 a 12 meses de monitoramento, você conhece a operação do cliente profundamente. O próximo passo natural é sair do reativo (compliance) para o proativo (planejamento): reestruturação de regime tributário, reorganização societária para eficiência fiscal, holding patrimonial.",
+      entregaveis:["Diagnóstico de planejamento tributário estrutural","Proposta de reestruturação — este já é produto de ticket médio-alto"],
+      metas:["Transição do cliente de retainer para mandato estratégico"]}
+   ]},
+  {phase:"Fase 2 — Aprofundamento",phaseColor:"sn-teal",
+   name:"Due diligence trabalhista e reestruturação de RH",tag:"PJs · Vínculos · PLR · Desligamentos",
+   retorno:"3–6 meses",honorario:"R$30k–R$150k",dificuldade:"Baixa-média",
+   nextProduct:"Defesa em reclamações trabalhistas / Compliance permanente",
+   nextReason:"A empresa regularizada precisa de alguém para manter o compliance — e para defender os casos que surgem mesmo com a estrutura correta.",
+   steps:[
+     {n:"1",color:"sn-teal",title:"Abordagem ou conversão de cliente existente",prazo:"Dia 1",
+      desc:"Para clientes novos: abordagem via RH com pergunta sobre PJs na folha. Para clientes existentes (pós-diagnóstico): 'encontramos indícios de risco de vínculo empregatício nos prestadores X, Y e Z. Precisamos mapear com cuidado.' O medo de passivo trabalhista é o gatilho.",
+      entregaveis:["Script de abordagem focado no risco de vínculo","Proposta de mapeamento de risco trabalhista — produto de entrada menor (R$5–15k)"],
+      metas:["Contrato de mapeamento assinado"]},
+     {n:"2",color:"sn-teal",title:"Mapeamento de vínculos e prestadores",prazo:"Semanas 1–3",
+      desc:"Levantar todos os prestadores de serviço (PJs), terceirizados e temporários. Para cada um: analisar os quatro critérios de vínculo (pessoalidade, habitualidade, subordinação, onerosidade). Elaborar matriz de risco por prestador.",
+      entregaveis:["Matriz de risco por prestador (PJ com alto/médio/baixo risco de vínculo)","Relatório de priorização: quem regularizar primeiro"],
+      metas:["Identificação dos 5 maiores riscos de vínculo"]},
+     {n:"3",color:"sn-teal",title:"Estratégia de regularização",prazo:"Semanas 3–5",
+      desc:"Para cada PJ com risco alto: decidir entre (a) conversão em CLT com negociação de verbas passadas; (b) reestruturação do contrato para eliminar os critérios de vínculo; (c) encerramento da relação com acordo documentado. Cada caso tem custo e benefício diferente.",
+      entregaveis:["Proposta de regularização por prestador","Minuta de novos contratos de prestação de serviço para os casos mantidos como PJ"],
+      metas:["Aprovação do plano de regularização pelo cliente"]},
+     {n:"4",color:"sn-teal",title:"Execução da regularização",prazo:"Meses 2–4",
+      desc:"Implementar o plano aprovado. Novos contratos de prestação com cláusulas que documentam a ausência de subordinação. Acordos extrajudiciais documentados para os casos encerrados. Reestruturação do PLR e dos benefícios variáveis com aprovação em assembleia (para evitar incorporação ao salário).",
+      entregaveis:["Contratos revisados e assinados","Acordos extrajudiciais documentados","Regulamento de PLR aprovado em assembleia"],
+      metas:["100% dos casos de alto risco regularizados"]},
+     {n:"5",color:"sn-teal",title:"Treinamento do RH",prazo:"Mês 4–5",
+      desc:"Treinar o gerente de RH para identificar novos vínculos de risco antes de contratar. Uma tarde de capacitação evita que o problema volte. Este serviço é um diferencial que fideliza — a maioria dos escritórios não faz.",
+      entregaveis:["Workshop de 3 horas com a equipe de RH","Manual de contratação PJ sem risco de vínculo"],
+      metas:["RH autônomo para screening básico de novos prestadores"]},
+     {n:"6",color:"sn-teal",title:"Proposta de compliance trabalhista recorrente",prazo:"Mês 5–6",
+      desc:"Com a reestruturação concluída, oferecer revisão semestral do quadro de PJs e auditoria anual da folha. Ticket menor que a reestruturação, mas altamente recorrente e com baixo esforço marginal.",
+      entregaveis:["Proposta de compliance trabalhista semestral","Modelo de relatório de auditoria anual"],
+      metas:["Retainer trabalhista contratado"]}
+   ]},
+  {phase:"Fase 2 — Aprofundamento",phaseColor:"sn-teal",
+   name:"Revisão e blindagem de contratos estratégicos",tag:"Portfólio · Clientes-âncora · Fornecedores críticos",
+   retorno:"2–4 meses",honorario:"R$20k–R$100k por portfólio",dificuldade:"Baixa-média",
+   nextProduct:"General Counsel terceirizado / Due diligence M&A",
+   nextReason:"Quem revisar os contratos do cliente conhece seus riscos mais profundos — é a transição natural para o papel de advisor permanente.",
+   steps:[
+     {n:"1",color:"sn-teal",title:"Identificação dos contratos críticos",prazo:"Semana 1",
+      desc:"Solicitar lista de todos os contratos vigentes. Filtrar pelos critérios: (a) representa >10% da receita ou do custo; (b) tem prazo >2 anos; (c) envolve exclusividade ou non-compete. Esses são os 5 a 10 contratos que merecem revisão aprofundada.",
+      entregaveis:["Mapa de contratos críticos com critérios de priorização","Checklist de documentos a solicitar"],
+      metas:["Lista de contratos priorizados aprovada pelo cliente"]},
+     {n:"2",color:"sn-teal",title:"Análise de risco por contrato",prazo:"Semanas 2–4",
+      desc:"Para cada contrato crítico: verificar ausência de cap de responsabilidade, change of control, força maior, exclusão de lucros cessantes, prazo e renovação automática, foro e arbitragem, non-compete e non-solicit. Elaborar redlining comentado.",
+      entregaveis:["Redlining comentado de cada contrato","Relatório de risco consolidado: o que está mal, o que está ausente e o impacto financeiro estimado"],
+      metas:["Relatório entregue e reunião de apresentação agendada"]},
+     {n:"3",color:"sn-teal",title:"Apresentação e priorização de riscos",prazo:"Semana 4–5",
+      desc:"Reunião com CFO e, se possível, CEO. Apresentar em linguagem financeira: 'este contrato expõe a empresa a R$X de risco ilimitado em caso de inadimplemento'. Priorizar quais contratos renegociar imediatamente versus monitorar.",
+      entregaveis:["Apresentação executiva de 5 slides com riscos e prioridades","Plano de ação: quais contratos renegociar, com quem e em qual prazo"],
+      metas:["Aprovação do plano de renegociação pelo cliente"]},
+     {n:"4",color:"sn-teal",title:"Renegociação e novas minutas",prazo:"Meses 2–4",
+      desc:"Elaborar minutas revisadas para os contratos prioritários. Apoiar nas negociações com clientes e fornecedores — presença do advogado na negociação muda o tom e a profundidade dos acordos. Registrar as novas versões.",
+      entregaveis:["Minutas revisadas com cláusulas de blindagem incluídas","Memória de negociação para cada contrato renegociado"],
+      metas:["Novos contratos assinados com cláusulas de proteção"]},
+     {n:"5",color:"sn-teal",title:"Biblioteca de contratos padrão do cliente",prazo:"Mês 4",
+      desc:"Ao final da revisão, entregar ao cliente um set de contratos padrão por tipo de relação comercial. Esse é um entregável de alto valor percebido — o cliente tem uma 'biblioteca jurídica própria' que reduz dependência de consultas futuras, mas aumenta o vínculo com o escritório que a criou.",
+      entregaveis:["Biblioteca de 3 a 5 contratos padrão (compra e venda, prestação de serviços, confidencialidade, distribuição)","Guia de uso: quando usar cada contrato e o que personalizar"],
+      metas:["Cliente usando os modelos de forma autônoma — e ligando quando precisar de algo fora do padrão"]},
+     {n:"6",color:"sn-teal",title:"Proposta de GC ou retainer contratual",prazo:"Mês 4–5",
+      desc:"Com a biblioteca pronta e o relacionamento estabelecido, oferecer: (a) retainer de revisão de contratos novos — R$X por contrato ou pacote mensal; (b) GC terceirizado — aprovação de todos os contratos acima de R$X. Este é o passo de maior escalada de ticket.",
+      entregaveis:["Proposta de retainer contratual","Proposta de GC terceirizado com escopo detalhado"],
+      metas:["Contrato de retainer ou GC assinado"]}
+   ]},
+  {phase:"Fase 3 — Mandato estratégico",phaseColor:"sn-amber",
+   name:"General Counsel terceirizado (GC-as-a-Service)",tag:"Diretor jurídico externo · Retainer estratégico",
+   retorno:"Recorrente mensal de longo prazo",honorario:"R$15k–R$60k/mês",dificuldade:"Alta (exige histórico)",
+   nextProduct:"M&A / Estruturação de fundos",
+   nextReason:"O GC que participa das reuniões de diretoria é o primeiro a saber de planos de expansão, aquisição ou captação — e o mais bem posicionado para liderar a operação.",
+   steps:[
+     {n:"1",color:"sn-amber",title:"Identificar o momento certo de propor",prazo:"Mês 9–12 de retainer",
+      desc:"O GC não se vende no primeiro encontro. Ele é proposto após 9 a 12 meses de relacionamento, quando o cliente já sente falta de ter alguém 'por dentro'. O sinal é quando o CFO começa a pedir opinião sobre assuntos além do escopo do retainer — sucessão, expansão, contrato importante.",
+      entregaveis:["Proposta de GC de 2 páginas com escopo, SLA e valor mensal","Comparativo de custo: GC terceirizado vs. CLT sênior em Joinville"],
+      metas:["Reunião de apresentação com CEO e sócios"]},
+     {n:"2",color:"sn-amber",title:"Definição de escopo e governança",prazo:"Mês 1 do contrato",
+      desc:"Escopo padrão do GC: (a) aprovação de contratos acima de R$X; (b) participação em reunião mensal de diretoria; (c) parecer em decisões societárias relevantes; (d) coordenação de litígios e consultores externos; (e) alerta regulatório contínuo. O que não está no escopo: execução de litígios (cobrar separado).",
+      entregaveis:["Contrato de GC com escopo detalhado e alçadas de aprovação","Calendário de reuniões de diretoria do ano"],
+      metas:["Primeiro mês com agenda estabelecida e acesso a todos os sistemas relevantes"]},
+     {n:"3",color:"sn-amber",title:"Onboarding — imersão na operação",prazo:"Meses 1–2",
+      desc:"Mapear todos os contratos vigentes, o quadro societário completo, os processos em curso, as licenças e alvarás, e o histórico de compliance. Sem isso, o GC dá opinião às cegas. Este mapeamento também é entregável cobrado separado se o cliente não tiver feito DD prévia.",
+      entregaveis:["Mapa de riscos jurídicos da empresa (confidencial)","Agenda de reuniões com cada área (financeiro, RH, operações, comercial)"],
+      metas:["Conhecer os 10 maiores riscos e oportunidades jurídicas da empresa ao fim do mês 2"]},
+     {n:"4",color:"sn-amber",title:"Rotina mensal de entrega",prazo:"Todo mês",
+      desc:"Aprovação de contratos, participação na reunião de diretoria, relatório mensal de risco (1 página), alerta de mudanças regulatórias. A cadência cria previsibilidade para o cliente e demonstra valor contínuo mesmo em meses 'tranquilos'.",
+      entregaveis:["Ata comentada da reunião de diretoria (aspectos jurídicos)","Relatório mensal de risco","Contratos aprovados com comentários"],
+      metas:["Presença ativa na reunião de diretoria todos os meses"]},
+     {n:"5",color:"sn-amber",title:"Identificação de operações estratégicas",prazo:"Mês 3 em diante",
+      desc:"Dentro da reunião de diretoria, você será o primeiro a saber de planos de expansão, aquisição de concorrente, captação de capital ou saída de sócio. Cada um desses eventos é um produto de alto ticket. O GC não é só proteção — é o canal de deal flow interno.",
+      entregaveis:["Proposta específica para cada operação estratégica identificada","Roadmap jurídico do plano de crescimento da empresa (entregável anual de valor)"],
+      metas:["Ao menos 1 operação estratégica por ano que gere projeto adicional ao retainer"]},
+     {n:"6",color:"sn-amber",title:"Revisão anual e expansão de escopo",prazo:"Mês 11–12",
+      desc:"Reunião anual de revisão com CEO e sócios: o que foi entregue, os riscos mitigados e as oportunidades aproveitadas. Apresentar o valor econômico gerado (passivos evitados + operações viabilizadas). Proposta de renovação com eventual expansão de escopo.",
+      entregaveis:["Relatório anual de valor — 'o que o GC entregou este ano em R$'","Proposta de renovação com escopo revisado"],
+      metas:["Renovação contratual e expansão de escopo ou ticket"]}
+   ]},
+  {phase:"Fase 3 — Mandato estratégico",phaseColor:"sn-amber",
+   name:"Assessoria em M&A e reestruturação societária",tag:"Fusões · Aquisições · Sucessão · Reorganização",
+   retorno:"6–18 meses por operação",honorario:"R$150k–R$2M+ por operação",dificuldade:"Alta (exige reputação)",
+   nextProduct:"Estruturação de fundos (FIP) / GC permanente",
+   nextReason:"Empresas que passam por M&A precisam de reestruturação societária, planejamento tributário pós-operação e, frequentemente, de estrutura de fundo para o próximo ciclo.",
+   steps:[
+     {n:"1",color:"sn-amber",title:"Deal origination — como chegar nos casos",prazo:"Antes de qualquer operação",
+      desc:"M&A não se prospecta como tributário. Chega por três caminhos: (a) cliente do GC que revela intenção de comprar ou vender; (b) indicação de banco de investimento parceiro (BTG, Itaú BBA, XP Corporate); (c) indicação de outro cliente. Construir relacionamento com os bankers de SC é o investimento mais importante da Fase 3.",
+      entregaveis:["Lista de contatos de bankers e gestores de PE em SC","Presença em eventos de M&A (ABVCAP, ABPHE, ACG Brasil)"],
+      metas:["3 a 5 reuniões com bankers parceiros por semestre"]},
+     {n:"2",color:"sn-amber",title:"Estruturação da proposta de assessoria",prazo:"Semana 1",
+      desc:"Definir claramente: você é o legal counsel (advogado das partes) ou o financial advisor (banco de investimento)? As funções são distintas. O legal counsel cuida da estrutura jurídica, documentação e DD. Não tente ser os dois — parceria com banker é mais eficiente.",
+      entregaveis:["Proposta de legal counsel com escopo (DD, contratos, regulatório) e honorários","Estrutura de honorários: fixo + success fee (0,5–1,5% do deal value é mercado para boutiques)"],
+      metas:["LOI ou term sheet de honorários assinado"]},
+     {n:"3",color:"sn-amber",title:"Due diligence completa",prazo:"Meses 1–3",
+      desc:"Usar o protocolo de DD societária (que já temos estruturado). Coordenar a DD tributária (com contador parceiro), trabalhista e de contratos. Deliverable central: relatório de DD com classificação de riscos e recomendação de ajustes no preço ou condições.",
+      entregaveis:["Relatório de DD completo por área","Sumário executivo de riscos e recomendações para o comprador","Memorando de ajuste de preço (price adjustment memo)"],
+      metas:["DD completa em prazo acordado com as partes — atraso quebra o deal"]},
+     {n:"4",color:"sn-amber",title:"Negociação e documentação",prazo:"Meses 2–4",
+      desc:"Redigir ou revisar: LOI (Letter of Intent), SPA (Share Purchase Agreement) ou quotas, representações e garantias, mecanismos de ajuste de preço (working capital, earnout), escrow, não concorrência dos sócios vendedores. Esta é a fase de maior valor adicionado do advogado.",
+      entregaveis:["Minutas de todos os documentos da transação","Registros de reuniões de negociação com posições de cada parte","Closing checklist — lista de condições para o fechamento"],
+      metas:["SPA assinado com todas as partes"]},
+     {n:"5",color:"sn-amber",title:"Closing e registro",prazo:"Mês 4–6",
+      desc:"Verificar todas as condições precedentes. Registrar a operação na Junta Comercial e, se aplicável, submeter ao CADE (faturamento combinado >R$750M). Transferir as quotas ou ações. Liberar o escrow inicial. Notificar clientes, fornecedores e bancos conforme obrigações contratuais.",
+      entregaveis:["Certificado de fechamento (closing certificate)","Protocolo no CADE (se aplicável)","Registro na Junta Comercial"],
+      metas:["Fechamento formal da operação dentro do prazo acordado"]},
+     {n:"6",color:"sn-amber",title:"Pós-closing — integração e acompanhamento",prazo:"Meses 6–18",
+      desc:"Acompanhar o período de earnout, a liberação do escrow e a integração societária. Defender eventuais reclamações de indenização. Este acompanhamento fideliza o cliente comprador para o próximo deal — e em Joinville, quem comprou uma vez geralmente compra de novo.",
+      entregaveis:["Relatório de acompanhamento do earnout (se houver)","Liberação de escrow com documentação","Defesa de reclamações de indenização pós-closing"],
+      metas:["Fechamento completo do período de escrow sem litígio — ou vitória no litígio"]}
+   ]},
+  {phase:"Fase 3 — Mandato estratégico",phaseColor:"sn-amber",
+   name:"Estruturação de fundos (FIP, FIDC, FII)",tag:"Gestora CVM · Mercado de capitais · Patrimônio",
+   retorno:"12–36 meses para estruturação",honorario:"Estruturação + taxa de gestão recorrente",dificuldade:"Muito alta (exige CGA + CVM)",
+   nextProduct:"Gestão de patrimônio permanente — receita vitalícia",
+   nextReason:"Uma vez estruturado, o fundo gera taxa de gestão recorrente indefinidamente. É o único produto do portfólio com receita vitalícia sem necessidade de novo esforço de venda.",
+   steps:[
+     {n:"1",color:"sn-coral",title:"Pré-requisito: certificação e registro CVM",prazo:"18–30 meses antes",
+      desc:"Não há atalho: sem o CGA (ANBIMA) e o registro da gestora na CVM (Resolução 21/2021), você não pode administrar recursos de terceiros legalmente. Este passo precisa estar em execução paralela desde o início do escritório. CPA-20 → CEA → CGA → registro da gestora.",
+      entregaveis:["Aprovação no CGA","Registro da gestora na CVM com responsável técnico nomeado","Estrutura de compliance da gestora (manual, políticas, diretor de compliance)"],
+      metas:["Gestora operacional antes de começar a prospectar cotistas"]},
+     {n:"2",color:"sn-coral",title:"Escolha do veículo e tese de investimento",prazo:"Mês 1",
+      desc:"Para o perfil de Joinville: (a) FIDC de recebíveis comerciais — para clientes com carteira de clientes; (b) FIP de participações — para aquisições e sucessões empresariais; (c) FII de papel (CRI) — para empresas com imóveis. Cada veículo tem público, regulação e complexidade diferentes.",
+      entregaveis:["Memorando de tese de investimento (2 páginas)","Análise comparativa de veículos para a necessidade específica"],
+      metas:["Decisão do veículo antes de iniciar a documentação"]},
+     {n:"3",color:"sn-coral",title:"Documentação do fundo",prazo:"Meses 1–3",
+      desc:"Para FIDC: regulamento, prospecto, contrato de cessão de créditos, política de crédito, termo de adesão. Para FIP: regulamento, prospecto, acordo de acionistas, política de investimento. Todos precisam ser aprovados pela CVM ou depositados na ANBIMA.",
+      entregaveis:["Regulamento do fundo (minuta e versão final)","Prospecto (se oferta pública)","Contratos operacionais (administrador fiduciário, custodiante, auditor)"],
+      metas:["Documentação aprovada e fundo constituído formalmente"]},
+     {n:"4",color:"sn-coral",title:"Captação — seleção de cotistas",prazo:"Meses 3–9",
+      desc:"Para oferta restrita (ICVM 476): até 50 investidores abordados, 20 subscritores máximos. Investidores profissionais (R$10M+ em investimentos) ou qualificados (R$1M+). Sua rede de clientes empresariais de Joinville é a fonte primária — empresários que você já assessorou em M&A ou em recuperação tributária.",
+      entregaveis:["Apresentação do fundo (pitchbook de 10 slides)","Termo de verificação de qualificação do investidor","Material de marketing conforme Resolução CVM 21"],
+      metas:["Capital mínimo subscrito para início das operações"],
+      flag:"Cuidado com publicidade de fundos: Resolução CVM 21 tem regras rígidas sobre o que pode ser divulgado publicamente. Qualquer material precisa ser revisado antes de circular."},
+     {n:"5",color:"sn-coral",title:"Operação e gestão",prazo:"Contínuo",
+      desc:"Reuniões trimestrais de cotistas. Relatórios mensais de gestão. Para FIDC: análise contínua da carteira de crédito, inadimplência e provisão. Para FIP: monitoramento das investidas, board seats, governança. A sinergia com o escritório: você faz a análise jurídica das investidas que o fundo compra.",
+      entregaveis:["Relatório mensal de gestão","Ata de assembleia trimestral de cotistas","Demonstrações financeiras auditadas anuais"],
+      metas:["Performance dentro dos parâmetros da política de investimento"]},
+     {n:"6",color:"sn-coral",title:"Escala — novos fundos e novas séries",prazo:"Ano 2–3",
+      desc:"Com o primeiro fundo operacional e com track record de 12 a 24 meses, lançar uma segunda série ou um novo fundo com tese adjacente. Cada novo fundo alavanca a estrutura já montada (gestora, compliance, auditor) com custo marginal baixo e receita crescente.",
+      entregaveis:["Relatório de track record do fundo 1 (para marketing do fundo 2)","Documentação do fundo 2 aproveitando templates do fundo 1"],
+      metas:["R$50M+ sob gestão ao fim do 3º ano — threshold para ser levado a sério pelo mercado"]}
+   ]}
+];
+
+let active=0;
+
+function buildSb(){
+  const sb=document.getElementById("sb");
+  let html="";
+  let phase="";
+  products.forEach((p,i)=>{
+    if(p.phase!==phase){
+      phase=p.phase;
+      const col=p.phaseColor;
+      const label=phase.replace("Fase 1","F1").replace("Fase 2","F2").replace("Fase 3","F3");
+      html+=`<div class="ph-label">${label}</div>`;
+    }
+    html+=`<div class="sb-item${i===active?" active":""}" onclick="select(${i})"><div class="sb-name">${p.name}</div><div class="sb-tag">${p.tag}</div></div>`;
+  });
+  sb.innerHTML=html;
+}
+
+function buildMain(){
+  const p=products[active];
+  const stepNums=p.steps.length;
+  const steps=p.steps.map((s,si)=>{
+    const ent=s.entregaveis?s.entregaveis.map(e=>`<div class="ent-item">${e}</div>`).join(""):"";
+    const metas=s.metas?s.metas.map(m=>`<div class="ent-item">${m}</div>`).join(""):"";
+    const flag=s.flag?`<div class="flag-box"><div class="flag-label">Atenção</div><div class="flag-text">${s.flag}</div></div>`:"";
+    return `<div class="step-row">
+      <div class="step-left">
+        <div class="step-num ${s.color}">${s.n}</div>
+        ${si<stepNums-1?'<div class="step-line"></div>':""}
+      </div>
+      <div class="step-card">
+        <div class="step-heading">${s.title} <span style="font-size:10px;color:var(--color-text-tertiary);font-weight:400;margin-left:4px">${s.prazo}</span></div>
+        <div class="step-desc">${s.desc}</div>
+        ${ent?`<div class="entregavel"><div class="ent-label">Entregáveis</div>${ent}</div>`:""}
+        ${metas?`<div class="entregavel" style="margin-top:6px"><div class="ent-label">Critério de sucesso</div>${metas}</div>`:""}
+        ${flag}
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("main").innerHTML=`
+    <div class="prod-title">${p.name}</div>
+    <div class="prod-meta">
+      <span class="meta-badge mb-green">${p.retorno}</span>
+      <span class="meta-badge mb-purple">${p.honorario}</span>
+      <span class="meta-badge mb-amber">Dificuldade: ${p.dificuldade}</span>
+    </div>
+    <div class="steps-wrap">${steps}</div>
+    <div class="next-box">
+      <div class="next-label">Próximo produto nesta escada</div>
+      <div class="next-text"><strong>${p.nextProduct}</strong> — ${p.nextReason}</div>
+    </div>
+    <button class="ask-btn" onclick="sendPrompt('Me ajude a montar um modelo de proposta comercial e contrato de honorários para o produto de ${p.name}. Quero o escopo, o modelo de remuneração e as cláusulas mais importantes.')">Montar proposta e contrato de honorários para este produto ↗</button>`;
+}
+
+function select(i){
+  active=i;
+  buildSb();
+  buildMain();
+  document.getElementById("main").scrollTop=0;
+}
+
+buildSb();
+buildMain();
+</script>
