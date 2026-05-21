@@ -1,0 +1,14 @@
+{
+  "name": "mla-gestao-clientes",
+  "version": "1.0.0",
+  "description": "MLA — Gestão de Clientes",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . MLA --platform=linux --arch=x64 --out=dist --overwrite --app-name=MLA"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-packager": "^17.1.2"
+  }
+}
