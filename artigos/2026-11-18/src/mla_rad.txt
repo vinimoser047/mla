@@ -1,0 +1,61 @@
+# Recolhimento pelo Adquirente (RAD): como garantir o crédito de CBS e IBS quando o fornecedor não paga o tributo
+@Manassés Lopes Advogados · Tributário · 18 de novembro de 2026 · Leitura de 7 minutos
+Na reforma tributária, o crédito de CBS e IBS do comprador depende de um fato que ele não controla: o fornecedor precisa pagar o tributo da venda. Se o fornecedor destaca a CBS na nota, recebe o valor cheio e não recolhe, o crédito do comprador fica travado. O **Recolhimento pelo Adquirente (RAD)** é o mecanismo que a lei criou para resolver isso: o próprio comprador paga o tributo daquela operação, direto ao Fisco, e destrava o seu crédito.
+Na semana passada, a Receita Federal recomendou publicamente que as empresas comecem a usar o RAD e, em 17 de novembro, disponibilizou uma API para emissão da guia de recolhimento. Neste artigo explicamos como o RAD funciona, quando ele vale a pena e o que precisa mudar nos seus contratos com fornecedores antes de janeiro de 2027.
+## Por que o crédito pode ficar travado?
+No sistema atual de PIS e Cofins, o crédito do comprador, em regra, não depende de o fornecedor ter pago o tributo. Basta a nota fiscal idônea.
+Na CBS e no IBS a lógica muda. A Lei Complementar nº 214/2025 condiciona a apropriação do crédito à **extinção do débito** da operação anterior. O débito do fornecedor pode ser extinto por algumas vias: pagamento pelo próprio fornecedor, compensação com créditos dele, recolhimento automático na liquidação financeira (o chamado **split payment**) ou recolhimento pelo adquirente.
+Enquanto o débito não for extinto, o crédito aparece para o comprador como **"não apropriado"**: existe, mas não pode ser usado para abater o tributo devido nem pedido em ressarcimento.
+> Em outras palavras: a partir de 2027, o fornecedor inadimplente com o Fisco passa a ser um problema de caixa do comprador.
+## O que é o RAD
+O RAD está previsto no **art. 36 da LC nº 214/2025** e foi regulamentado pelo Comitê Gestor do IBS e pela Receita Federal. Funciona assim:
+- o comprador paga ao fornecedor o **valor da mercadoria ou do serviço sem a CBS e o IBS**;
+- o comprador recolhe a CBS e o IBS daquela operação **diretamente ao Fisco**, por guia própria vinculada à nota fiscal;
+- o valor recolhido é aplicado no débito do fornecedor **daquela operação específica**, sem seguir a ordem cronológica dos demais débitos dele;
+- extinto o débito, o crédito do comprador passa de "não apropriado" para **"apropriado"** e pode ser usado.
+O RAD é **opcional** e é escolhido **operação por operação**, no momento do pagamento. Não é uma opção para o período inteiro, nem para todos os fornecedores.
+## Quem pode usar
+Pelas regras divulgadas, o RAD está disponível ao adquirente sujeito ao **regime regular** de CBS e IBS e é usado quando o pagamento ao fornecedor é feito por um meio que não permite o split payment. Como o split payment ainda não opera em larga escala, na prática o RAD é, hoje, a principal ferramenta de que o comprador dispõe para garantir o crédito.
+Se o recolhimento feito pelo comprador superar o débito do fornecedor naquela operação, o excedente é transferido ao fornecedor em até **três dias úteis**.
+## Quanto está em jogo: um exemplo
+Uma indústria compra R$ 1.000.000 por mês em insumos de um fornecedor do regime regular. Considerando a CBS de referência de 11,2% para 2027 (ainda sujeita à resolução do Senado) e deixando o IBS de 0,1% de fora para simplificar:
+|Cenário|Pagamento ao fornecedor|Recolhimento ao Fisco|Crédito de CBS do comprador
+|Pagamento tradicional, fornecedor recolhe|R$ 1.112.000|pelo fornecedor|R$ 112.000 apropriado
+|Pagamento tradicional, fornecedor não recolhe|R$ 1.112.000|nenhum|R$ 112.000 travado
+|Com RAD|R$ 1.000.000|R$ 112.000 pelo comprador|R$ 112.000 apropriado
+No segundo cenário, o comprador pagou o tributo embutido no preço e ainda assim não pode usar o crédito. Em um ano, são **R$ 1,34 milhão em créditos travados** com um único fornecedor. Com o RAD, o desembolso total é o mesmo, mas o crédito fica garantido.
+## Quando o RAD vale a pena
+O RAD faz mais sentido nestas situações:
+- fornecedores com **histórico de débitos fiscais**, parcelamentos ou situação cadastral irregular;
+- fornecedores de **grande volume**, em que um crédito travado afeta o caixa;
+- cadeias com **alta informalidade** ou concentração em poucos fornecedores;
+- compras em que o comprador tem **margem estreita** e não pode esperar o fornecedor regularizar a situação.
+Por outro lado, o RAD exige controle: é preciso vincular cada recolhimento à nota fiscal correta, tratar pagamentos parcelados, devoluções e cancelamentos, e evitar recolhimento em duplicidade. Para quem tem muitos fornecedores pequenos, o custo operacional pode não compensar sem automação, e é exatamente para isso que a Receita liberou a API.
+## O que muda nos contratos com fornecedores
+O RAD muda a forma de pagamento, e isso precisa estar no contrato. O fornecedor que espera receber o preço cheio, com tributo, vai receber só o valor líquido. Sem previsão contratual, isso pode virar discussão de inadimplemento.
+Recomendamos revisar os contratos de fornecimento recorrentes para incluir:
+- **Cláusula de autorização do RAD**, permitindo ao comprador optar, a seu critério, por recolher CBS e IBS diretamente e pagar ao fornecedor apenas o valor líquido, com quitação integral do preço;
+- **Obrigação de emissão correta da nota**, com destaque, classificação (NCM/NBS) e informações necessárias para vincular o recolhimento;
+- **Gatilhos objetivos** para o uso do RAD, como certidão positiva, débito em aberto ou atraso na entrega de obrigações acessórias;
+- **Regra para o excedente** transferido pelo Fisco, evitando que o fornecedor cobre duas vezes;
+- **Responsabilidade por créditos glosados**: se o crédito do comprador for negado por falha do fornecedor, este responde pela perda, com direito de retenção ou compensação;
+- **Cláusula de revisão tributária**, prevendo o reequilíbrio do preço quando a alíquota de CBS e IBS mudar.
+Do lado do fornecedor, a recomendação é a inversa: aceitar o RAD pode ser um diferencial comercial, mas o contrato deve deixar claro que o recolhimento pelo comprador quita o preço e que o fornecedor não responde por recolhimento feito com erro pelo adquirente.
+## RAD, split payment e 2026
+Em 2026, ano de teste, a CBS de 0,9% e o IBS de 0,1% são apenas destacados na nota, sem recolhimento efetivo para quem cumpre as obrigações acessórias. O RAD já pode ser testado no Portal da Reforma Tributária do Consumo, e a Receita tem incentivado as empresas a se habituarem ao preenchimento agora, antes de o tributo pesar no caixa.
+A partir de janeiro de 2027, com a CBS cobrada de fato, o RAD passa a ter efeito financeiro. Quando o split payment estiver funcionando em larga escala, os dois mecanismos devem coexistir: o split payment é, nas palavras da própria Receita, um "RAD automatizado".
+## Perguntas frequentes sobre o RAD
+### O RAD é obrigatório?
+Não. É uma opção do comprador, operação por operação. Mas, como depende de o fornecedor aceitar receber o valor líquido, convém negociá-lo e prevê-lo em contrato.
+### Empresa do Simples Nacional pode usar o RAD?
+Pelas regras divulgadas, o RAD é voltado ao adquirente do regime regular de CBS e IBS, que é quem aproveita crédito amplo.
+### Se eu usar o RAD, o fornecedor deixa de ser responsável pelo tributo?
+O recolhimento feito pelo comprador extingue o débito daquela operação. Se o valor recolhido for menor que o devido, a diferença continua sendo do fornecedor.
+### O crédito sai na hora?
+O crédito passa a "apropriado" quando o débito do fornecedor é extinto. Com o RAD, isso depende apenas do processamento do recolhimento do próprio comprador, e não do comportamento do fornecedor.
+### Preciso de sistema novo?
+Para volumes pequenos, a guia pode ser gerada no portal. Para volumes maiores, a API disponibilizada pela Receita permite integrar a emissão ao sistema de contas a pagar.
+## Antes de janeiro
+O RAD é a ferramenta mais segura para quem não quer depender da regularidade fiscal dos fornecedores para aproveitar crédito de CBS e IBS. Mas ele só funciona bem com três peças no lugar: contratos que autorizem o pagamento líquido, cadastro de fornecedores classificado por risco e um processo de contas a pagar capaz de vincular cada recolhimento à nota certa.
+A equipe tributária e empresarial da **Manassés Lopes Advogados** pode revisar seus contratos de fornecimento, mapear os fornecedores de maior risco e estruturar a política de uso do RAD da sua empresa. Fale com a nossa equipe pelo site www.manasseslopes.com.
+*Este artigo tem caráter informativo e não substitui a análise do caso concreto.*

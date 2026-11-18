@@ -1,0 +1,27 @@
+# Textos para LinkedIn – 18/11/2026
+*Antes de publicar, confira os links: eles seguem o padrão de endereço de cada blog e devem ser ajustados se o endereço final do post for diferente.*
+## Post 1 – Novo PGDAS-D (Simples Nacional)
+Sua empresa é do Simples e vende a prazo? A partir de 2027, o DAS vai chegar antes do dinheiro.
+A Receita Federal atualizou o PGDAS-D para a reforma tributária, e as mudanças já valem para a apuração de novembro de 2026:
+- Acabou a escolha entre regime de caixa e de competência. A partir de 2027, todo o Simples apura por competência: a receita é tributada no mês da venda, mesmo que o cliente pague 60 ou 90 dias depois.
+- Todas as empresas do Simples, e não só as que usam o fator r, passam a informar a folha de salários dos últimos 12 meses (FS12).
+- Esses dados vão definir as alíquotas de IBS e CBS destacadas nas notas fiscais a partir de 2027.
+O que fazer agora: levantar as contas a receber em 31/12, confirmar a regra de transição com o contador, refazer o fluxo de caixa do 1º trimestre e conferir se a folha do PGDAS-D bate com o eSocial.
+Explicamos tudo com exemplo numérico e um passo a passo.
+Leia o artigo completo:
+Manasses Lopes Advogados: https://www.manasseslopes.com/blog
+O Tributarista Minucioso: https://otributaristaminucioso.blogspot.com/2026/11/novo-pgdas-d-o-simples-nacional-perdeu.html
+#SimplesNacional #ReformaTributária #PGDAS #Tributário #Empresas
+## Post 2 – Recolhimento pelo Adquirente (RAD)
+Na reforma tributária, o seu crédito de CBS e IBS depende de o fornecedor pagar o tributo dele.
+Se o fornecedor destaca a CBS na nota, recebe o valor cheio e não recolhe, o crédito do comprador fica "não apropriado": existe, mas não pode ser usado. Com a CBS de referência de 11,2% em 2027, um fornecedor de R$ 1 milhão por mês pode travar mais de R$ 1,3 milhão em créditos em um ano.
+A saída prevista na LC 214/2025 é o Recolhimento pelo Adquirente (RAD):
+- o comprador paga ao fornecedor só o valor líquido;
+- recolhe a CBS e o IBS daquela operação direto ao Fisco;
+- e o crédito fica garantido, independentemente da situação fiscal do fornecedor.
+A Receita recomendou que as empresas comecem a usar o RAD e liberou, nesta semana, a API para emissão da guia. Mas há um ponto que poucos estão olhando: o RAD muda a forma de pagamento, e isso precisa estar no contrato com o fornecedor.
+No artigo, mostramos quando o RAD vale a pena e quais cláusulas incluir nos contratos de fornecimento antes de janeiro.
+Leia o artigo completo:
+Manasses Lopes Advogados: https://www.manasseslopes.com/post/recolhimento-pelo-adquirente-rad
+O Tributarista Minucioso: https://otributaristaminucioso.blogspot.com/
+#ReformaTributária #CBS #IBS #Contratos #Tributário #Empresas

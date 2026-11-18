@@ -1,0 +1,62 @@
+# Novo PGDAS-D: o Simples Nacional perdeu o regime de caixa e agora quer a sua folha de salários. O que muda já na apuração de novembro
+@Vinicius Moser · O Tributarista Minucioso · 18 de novembro de 2026
+No dia 13 de novembro, a Receita Federal avisou que o PGDAS-D, o programa em que toda empresa do Simples Nacional calcula o DAS, foi atualizado para a reforma tributária. As mudanças já valem para os períodos de apuração de **novembro e dezembro de 2026**, ou seja, para o DAS que vence em dezembro e em janeiro. São duas: o programa não pergunta mais se a empresa apura pelo **regime de caixa** ou de **competência**, e passa a exigir a **folha de salários dos últimos 12 meses (FS12)** de **todas** as empresas do Simples, e não só das que dependem do fator r.
+Parece detalhe de sistema. Não é. Neste texto eu explico o que mudou, por que a Receita fez isso agora, como a mudança mexe no seu caixa a partir de janeiro e o que conferir com o seu contador antes de fechar novembro.
+## O que aconteceu, em uma frase:
+A Receita adaptou o PGDAS-D para que, a partir de 2027, os dados declarados no Simples sirvam para calcular as **alíquotas efetivas de IBS e CBS** que vão sair destacadas nas notas fiscais das empresas do Simples. Para isso, o programa precisa de duas coisas que nem sempre tinha: receita apurada sempre do mesmo jeito (competência) e a folha de salários de todo mundo.
+## Mudança 1: acabou a escolha entre caixa e competência
+Até hoje, a empresa do Simples podia escolher entre dois jeitos de contar o faturamento do mês:
+- **Competência:** a receita entra no mês em que a venda é feita ou o serviço é prestado, mesmo que o cliente pague depois.
+- **Caixa:** a receita só entra no mês em que o dinheiro cai na conta.
+O regime de caixa sempre foi um alívio para quem vende a prazo. Se a nota sai em março e o cliente paga em junho, o DAS daquela receita só vem em julho. A empresa não paga imposto sobre dinheiro que ainda não recebeu.
+Segundo a Receita, nos períodos de novembro e dezembro de 2026 o programa já não faz essa pergunta, e **a partir de 2027 todas as apurações do Simples serão por competência**. O motivo é técnico: a CBS e o IBS nascem na emissão da nota. Se o Simples continuasse no caixa, a alíquota destacada na nota e o tributo efetivamente pago no DAS ficariam descasados no tempo, e o crédito que o seu cliente aproveita não bateria com o que você recolheu.
+## Por que isso importa para quem vende a prazo?
+Porque o imposto passa a vir antes do dinheiro. Veja um exemplo simples:
+|Situação|Regime de caixa (até 2026)|Competência (a partir de 2027)
+|Venda feita em janeiro, para receber em 90 dias|R$ 100.000|R$ 100.000
+|Receita que entra no DAS de janeiro|R$ 0|R$ 100.000
+|DAS a pagar em fevereiro (alíquota efetiva de 10%)|R$ 0|R$ 10.000
+|Quando o cliente paga|abril|abril
+Na competência, a empresa tira R$ 10 mil do caixa em fevereiro para pagar o tributo de uma venda que só vai receber em abril. Para quem vende muito a prazo, é capital de giro que some.
+*Exemplo simplificado; alíquota efetiva hipotética.*
+## E o que já vendi e ainda não recebi?
+Esse é o ponto que mais merece atenção, e a notícia da Receita não detalha. Quem está no caixa tem hoje um estoque de vendas feitas e ainda não recebidas. Quando a regra muda, é preciso saber em que mês essas receitas serão tributadas, para não pagar duas vezes nem deixar de pagar.
+A minha recomendação é levantar já, com o contador, a lista de **contas a receber em 31 de dezembro de 2026** de vendas feitas no regime de caixa, e confirmar a regra de transição aplicável antes de fechar o DAS de janeiro. Se houver valor alto, vale programar o caixa para o primeiro trimestre de 2027.
+## Mudança 2: a folha de salários de todo mundo (FS12)
+A folha dos últimos 12 meses sempre existiu no PGDAS-D, mas só era obrigatória para quem tem atividade que depende do **fator r**, a conta que compara folha e faturamento e define se o serviço vai para o Anexo III (mais barato) ou para o Anexo V (mais caro).
+Agora, a partir do período de novembro de 2026, **todas as atividades do Simples** precisam informar a FS12: comércio, indústria e serviços, com ou sem fator r.
+A Receita não explicou em detalhe para que vai usar esse dado em cada caso. O que ela disse é que as informações do PGDAS-D vão servir para determinar as alíquotas de IBS e CBS das notas a partir de 2027. Na prática, isso significa que **a folha passa a ser um dado fiscal monitorado** de toda empresa do Simples, e não só de quem presta serviço.
+## O que entra na folha (e onde costuma dar erro):
+Para o Simples, a folha considerada é ampla. Em regra, entram:
+- salários e demais remunerações dos empregados;
+- pró-labore dos sócios;
+- 13º salário;
+- contribuição patronal ao INSS, quando devida (caso das atividades do Anexo IV, que recolhem o INSS patronal fora do DAS);
+- FGTS.
+Os erros mais comuns que eu vejo:
+- empresa que paga sócio só por distribuição de lucros e declara folha zero;
+- folha informada no PGDAS-D diferente da que está no eSocial e na DCTFWeb;
+- meses em branco no histórico de 12 meses por troca de contador;
+- empresa nova que não informa a folha proporcional desde a abertura.
+Com o cruzamento automático que a reforma traz, a divergência entre PGDAS-D e eSocial tende a virar malha fiscal. Vale conferir antes de transmitir.
+## Quem ganha e quem perde com as mudanças:
+- **Ganha previsibilidade** quem já apura por competência e tem folha organizada: nada muda na rotina, e os dados vão alimentar a nota corretamente.
+- **Sente no caixa** quem vende a prazo e usava o regime de caixa: o DAS passa a vir antes do dinheiro.
+- **Corre risco de malha** quem tem folha desencontrada entre os sistemas, ou paga os sócios só com lucros e não tem pró-labore.
+## E a opção pelo Simples em 2027?
+Ainda nesta semana, a partir de **20 de novembro**, a Receita libera a consulta do processamento final das opções pelo Simples Nacional para 2027. Quem pediu nos últimos dias do prazo pode aparecer com o pedido temporariamente indeferido. Confira o seu.
+Lembre também: para 2027, a empresa do Simples que vende para outras empresas pôde escolher recolher IBS e CBS por fora do DAS, no regime regular, para entregar mais crédito ao cliente. Quem fez essa escolha vai ter, no PGDAS-D, uma apuração diferente da de quem ficou com tudo no DAS.
+## O que fazer agora:
+1. Confirme com o contador se a sua empresa apura por caixa hoje.
+2. Se sim, levante as contas a receber em 31/12/2026 e confirme a regra de transição antes do DAS de janeiro.
+3. Refaça a projeção de caixa do 1º trimestre de 2027 considerando o DAS por competência.
+4. Revise prazos de recebimento e condições comerciais: vender a 90 dias passa a custar mais.
+5. Monte a FS12 dos últimos 12 meses, mês a mês, incluindo pró-labore e encargos.
+6. Compare a folha do PGDAS-D com o eSocial e a DCTFWeb e corrija divergências antes de transmitir.
+7. Se os sócios só recebem lucros, avalie com o contador a fixação de um pró-labore.
+8. A partir de 20/11, confira o resultado da opção pelo Simples para 2027.
+*Este texto tem caráter informativo e não substitui a análise do caso concreto da sua empresa.*
+## Fontes:
+- Receita Federal / Ministério da Fazenda. "Programa Gerador do Documento de Arrecadação do Simples Nacional (PGDAS-D) é atualizado para atender à Reforma Tributária a partir de novembro de 2026", 13/11/2026.
+- Receita Federal. "Processamento final de solicitação de opção pelo Simples Nacional para 2027 pode ser consultado a partir de 20/11", 13/11/2026.
+- Fenacon. "PGDAS-D é atualizado para atender à Reforma Tributária a partir de novembro de 2026", 16/11/2026.
