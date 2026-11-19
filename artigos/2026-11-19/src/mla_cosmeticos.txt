@@ -1,0 +1,51 @@
+# Exportação de cosméticos para a América Latina: o que muda com o Decreto nº 13.169/2026 e o que ajustar nos contratos
+@Manassés Lopes Advogados · Comércio Exterior e Empresarial · 19 de novembro de 2026 · Leitura de 6 minutos
+O Brasil é o terceiro maior mercado de higiene pessoal, perfumaria e cosméticos do mundo, e a América Latina é o principal destino das exportações do setor. Em 17 de novembro de 2026, foi publicado o **Decreto nº 13.169/2026**, que coloca em vigor no Brasil o acordo da Aladi para eliminar obstáculos técnicos ao comércio de cosméticos entre oito países da região.
+O acordo não reduz o imposto de importação. O que ele ataca é a burocracia: registros sanitários, certificados e exigências de rotulagem diferentes em cada país. Para quem exporta, ou quer começar a exportar, isso significa menos custo e menos tempo para colocar o produto na prateleira do vizinho. Mas significa também mais responsabilidade da empresa pela segurança do produto depois da venda. Neste artigo explicamos o que muda, quando muda e o que rever nos contratos com distribuidores.
+## O que é o acordo
+O **Acordo de Alcance Parcial nº 20 da Aladi** foi assinado em fevereiro de 2026 por **Brasil, Argentina, Bolívia, Chile, Equador, Paraguai, Peru e Uruguai**. Ele continua aberto à adesão de outros países da Aladi. O México participou das negociações, mas ainda não aderiu.
+O Brasil foi o primeiro signatário a concluir os procedimentos internos. O decreto entrou em vigor na data da publicação, mas a **aplicação prática do acordo** segue uma regra própria: começa **60 dias corridos** depois que pelo menos duas partes comunicarem à Aladi a conclusão de seus procedimentos internos, e se estende aos demais países 60 dias após a comunicação de cada um.
+> Na prática: o Brasil já fez a sua parte, mas os benefícios só valem em relação a cada país depois que ele também concluir o seu processo. Vale acompanhar o calendário de cada mercado de destino.
+## O que muda para o exportador
+|Tema|Como é hoje (em regra)|O que o acordo prevê
+|Registro sanitário|Autorização prévia ou registro em vários países|Substituição por **notificação**, conforme o risco do produto; onde o registro permanecer, tramitação objetiva e em prazo razoável
+|Certificado de Livre Venda|Exigido por diversos países|**Eliminado**
+|Rotulagem e boas práticas|Requisitos diferentes em cada país|Aproximação com base em referências internacionais
+|Ingredientes|Listas e revisões nacionais distintas|Convergência na revisão de ingredientes
+|Imposto de importação|Conforme acordos tarifários existentes|**Sem alteração**
+|Responsabilidade pós-venda|Variável|Empresa responde pela **segurança e qualidade** e deve manter informações à disposição das autoridades
+O fim do Certificado de Livre Venda e a troca do registro pela notificação são as mudanças de efeito mais imediato no custo. Para pequenas e médias empresas, que muitas vezes desistem de um mercado por causa do custo regulatório de entrada, o ganho tende a ser maior.
+## Quanto está em jogo
+Em 2025, as exportações brasileiras do setor somaram **US$ 1,06 bilhão**, alta de 20,1% em relação a 2024. Os países da Aladi absorveram cerca de **76%** desse total. Os principais destinos foram Argentina (US$ 222 milhões), México (US$ 115 milhões), Colômbia (US$ 104 milhões), Chile (US$ 100 milhões) e Paraguai (US$ 73 milhões). O mercado regional é estimado em mais de US$ 55 bilhões.
+Note que México e Colômbia, dois dos cinco maiores destinos, **não estão entre os signatários**. Para esses mercados, as regras atuais continuam valendo.
+## A outra face: mais responsabilidade da empresa
+A lógica do acordo é a mesma de outros mercados maduros: o Estado exige menos autorização antes da venda e fiscaliza mais depois dela. O acordo prevê:
+- **vigilância de mercado** mais forte;
+- **responsabilidade da empresa** pela segurança e qualidade do produto;
+- dever de **manter informações** técnicas à disposição das autoridades;
+- canais para que **consumidores comuniquem** efeitos indesejados e problemas de qualidade.
+Isso tem reflexo jurídico direto. Quando o produto é vendido no exterior por um distribuidor ou importador local, é preciso definir **quem notifica o produto à autoridade sanitária**, quem guarda o dossiê técnico, quem recebe as reclamações de consumidores e quem responde em caso de recolhimento (recall).
+## O que revisar nos contratos de distribuição e exportação
+Recomendamos que fabricantes e marcas que exportam, ou pretendem exportar, para os países signatários revisem os contratos com distribuidores e importadores para incluir ou ajustar:
+- **Titularidade da notificação sanitária.** Quem será o responsável perante a autoridade do país de destino, e o que acontece com a notificação se o contrato terminar. Sem cláusula clara, o distribuidor pode reter, na prática, o acesso da marca ao mercado.
+- **Dossiê técnico e confidencialidade.** Quais informações (fórmula, estudos de segurança, boas práticas de fabricação) serão compartilhadas, com que finalidade e com que proteção.
+- **Cosmetovigilância.** Prazo para o distribuidor repassar reclamações e relatos de efeitos adversos ao fabricante, e quem comunica a autoridade.
+- **Recall e retirada do mercado.** Procedimento, divisão de custos e responsabilidade perante consumidores e autoridades.
+- **Rotulagem.** Quem aprova o rótulo e quem responde por erros de tradução ou de informação obrigatória.
+- **Exclusividade e território.** Com a entrada facilitada, novos distribuidores podem surgir. Vale rever exclusividades, metas mínimas e regras de concorrência no território.
+- **Lei aplicável e foro.** Contratos internacionais devem prever a lei que rege a relação e o meio de solução de conflitos, de preferência a arbitragem, com sede e idioma definidos.
+- **Revisão em razão de mudança regulatória.** Cláusula que permita adaptar o contrato à medida que cada país for aplicando o acordo.
+Para o importador ou distribuidor estrangeiro, a recomendação é a inversa: limitar a sua responsabilidade às obrigações que efetivamente controla e exigir do fabricante as informações técnicas necessárias para cumprir o dever de vigilância.
+## Perguntas frequentes
+### O acordo já vale?
+O decreto brasileiro está em vigor desde 17/11/2026. A aplicação prática depende de comunicações dos países à Aladi: começa 60 dias após pelo menos duas partes concluírem seus procedimentos internos, e se estende a cada país 60 dias após a sua própria comunicação.
+### O acordo reduz o imposto de importação?
+Não. Ele trata de obstáculos técnicos e procedimentos regulatórios. As preferências tarifárias continuam a depender dos acordos comerciais já existentes e do certificado de origem.
+### Minha empresa vende para o México. Muda alguma coisa?
+Por enquanto não. O México participou das negociações, mas não aderiu ao acordo.
+### O acordo vale para importação de cosméticos no Brasil?
+O acordo é recíproco entre os signatários. A forma de aplicação no Brasil depende da regulamentação da Anvisa, que participou da negociação.
+## Próximos passos
+O Decreto nº 13.169/2026 abre uma janela para quem quer crescer na América Latina com menos custo regulatório. Mas a facilidade na entrada vem acompanhada de mais responsabilidade depois da venda, e isso precisa estar bem distribuído nos contratos com distribuidores e importadores.
+A equipe de comércio exterior e direito empresarial da **Manassés Lopes Advogados** pode revisar seus contratos internacionais de distribuição, estruturar a titularidade das notificações sanitárias e preparar a sua empresa para os novos mercados. Fale com a nossa equipe pelo site www.manasseslopes.com.
+*Fontes: MDIC, notícia de 17/11/2026; Decreto nº 13.169, de 16/11/2026. Este artigo tem caráter informativo e não substitui a análise do caso concreto.*
