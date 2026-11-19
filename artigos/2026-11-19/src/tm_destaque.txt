@@ -1,0 +1,71 @@
+# 72 mil empresas no radar: a Receita já sabe quem não destaca CBS e IBS na nota fiscal
+@O Tributarista Minucioso · Reforma Tributária · 19 de novembro de 2026
+Em 19 de novembro de 2026, o Ministério da Fazenda anunciou que a Receita Federal, o Comitê Gestor do IBS (CGIBS) e o Conselho Federal de Contabilidade (CFC) vão procurar cerca de **25 mil profissionais de contabilidade**. Juntos, eles respondem pela escrituração de aproximadamente **72 mil pessoas jurídicas** que, segundo o cruzamento de dados do Fisco, não destacaram, ou destacaram de forma incompleta, a CBS e o IBS em seus documentos fiscais eletrônicos.
+A ação é declaradamente orientativa e não aplica multa a ninguém. Mesmo assim, o recado é claro: o preenchimento dos novos campos da nota fiscal já está sendo monitorado, empresa por empresa e contador por contador. Neste texto explico, com a minúcia de sempre, o critério usado pela Receita, as normas que estão por trás dele e por que o assunto deixa de ser uma formalidade a partir de 31 de dezembro de 2026.
+## O que a Receita fez, exatamente
+A Receita analisou os documentos fiscais eletrônicos (DF-e) emitidos nos **30 dias anteriores a 15 de novembro de 2026**, incluindo o próprio dia 15. Dentro desse universo, separou dois grupos de empresas:
+|Grupo|Critério usado pela Receita
+|Sem destaque|Emitiu **mais de 150 DF-e** no período e **não destacou** CBS e IBS em nenhum deles
+|Destaque parcial|Emitiu **mais de 150 DF-e** no período e preencheu os campos de CBS e IBS em **menos de 86%** dos documentos
+Depois, a Receita identificou o contador responsável por cada uma dessas empresas a partir das **Escriturações Contábeis Fiscais (ECF) de 2024 e 2025**. É por isso que a comunicação chega primeiro ao profissional da contabilidade, com apoio do CFC e dos conselhos regionais.
+Dois detalhes desse critério merecem atenção:
+- **O corte de 150 documentos.** Empresas que emitem menos de 150 DF-e por mês ficaram fora desta rodada. Isso não significa que estejam dispensadas do destaque, mas apenas que não entraram no primeiro filtro.
+- **O índice de 86%.** A Receita não exige 100% de preenchimento para considerar a empresa "fora do radar" nesta ação, o que reconhece que há operações em que os campos podem legitimamente não ser preenchidos. Mas um índice baixo é sinal de que o sistema emissor, o cadastro de produtos ou a parametrização tributária ainda não foram ajustados.
+A própria Receita afirma que a ausência ou o preenchimento parcial **não é, por si só, prova de irregularidade**, e que pode ter causas legítimas, como a natureza das operações ou problemas na implantação dos sistemas emissores.
+## De onde vem a obrigação de destacar
+A base legal está na **Lei Complementar nº 214/2025**, que instituiu a CBS e o IBS. Em 2026, ano de teste, a CBS é cobrada à alíquota de **0,9%** e o IBS à alíquota de **0,1%**. Esses valores são destacados na nota, mas o contribuinte que cumpre as obrigações acessórias fica **dispensado do recolhimento** (art. 348 da LC nº 214/2025).
+O detalhe que costuma passar despercebido é a condição: **a dispensa depende do cumprimento das obrigações acessórias**. E a principal obrigação acessória da CBS e do IBS, em 2026, é justamente emitir o documento fiscal com os campos corretamente preenchidos.
+O calendário de obrigatoriedade desses campos foi fixado pelo **Ato Conjunto RFB/CGIBS nº 4, de 30 de julho de 2026**:
+|Data|Documentos e contribuintes
+|3/8/2026|NF-e, NFC-e, CT-e, CT-e OS, MDF-e, GTV-e, NF3e, DC-e, NFS-e Via e BP-e (regra geral)
+|1/10/2026|NFCom, DIR e NFS-e de serviços do ISS sem data específica
+|1/12/2026|NFS-e de plataformas digitais, locações, bens imateriais e outros casos; NFGas, NFAg, NF-e ABI; NF-e emitida por quem não é contribuinte do ICMS
+|1/1/2027|Optantes do Simples Nacional, NF-e de combustíveis com tributação monofásica, NF-e de importação e Duimp
+*Quadro elaborado a partir do Ato Conjunto RFB/CGIBS nº 4/2026. Confira a data aplicável ao seu documento e à sua operação no texto oficial.*
+Ou seja: para a indústria e o comércio que emitem NF-e e não estão no Simples, o destaque é obrigatório **desde 3 de agosto de 2026**. Mais de três meses depois, a Receita está medindo quem ainda não se adaptou.
+## O Programa Nacional de Conformidade e a data que importa
+O **Ato Conjunto RFB/CGIBS nº 5, de 12 de agosto de 2026**, criou o Programa Nacional de Conformidade Tributária (PNCT) para 2026. A ideia é dar ao contribuinte uma adaptação assistida: primeiro orientar, depois cobrar.
+Pelas regras divulgadas, estão no programa, em regra, os contribuintes que cumprem as obrigações acessórias do IBS e da CBS. Quem ainda tem falhas pode permanecer nele desde que demonstre compromisso com a conformidade, o que exige, cumulativamente:
+1. **evolução contínua** na emissão correta de documentos fiscais;
+2. **resposta tempestiva** às comunicações e intimações do Fisco;
+3. **correção das inconsistências até 31 de dezembro de 2026**;
+4. manutenção de um **profissional de contabilidade responsável** pela conformidade fiscal.
+Na síntese da própria Receita: "não será beneficiado quem ficar parado".
+> A comunicação enviada agora não é um auto de infração. Mas a empresa que a recebe e não reage deixa de cumprir pelo menos dois dos quatro requisitos do programa: evolução contínua e resposta tempestiva.
+Outro ponto relevante: a Receita esclareceu que comunicações de monitoramento e cruzamento de dados **não caracterizam início de procedimento fiscal**. Portanto, quem recebe o aviso continua podendo corrigir espontaneamente as falhas, e permanece o prazo legal de **60 dias** para regularizar as inconsistências apontadas pela administração.
+## Por que isso importa mais em 2027 do que em 2026
+Em 2026 o impacto financeiro do destaque é quase simbólico: 1% sobre a operação, sem recolhimento efetivo para quem cumpre as obrigações. Em 2027 a lógica muda:
+- a **CBS passa a ser cobrada de fato**, com a extinção do PIS e da Cofins;
+- o **crédito do comprador** depende do documento fiscal correto do fornecedor (e, em regra, da extinção do débito correspondente);
+- as **empresas do Simples Nacional** passam a ter de emitir documentos com os novos campos;
+- os sistemas de validação das notas tendem a deixar de ser tolerantes.
+Uma empresa que chega a janeiro de 2027 com o cadastro de produtos sem a classificação tributária correta (CST e cClassTrib) vai errar alíquota, base de cálculo e crédito na mesma nota. E o erro passa a aparecer também do lado do cliente, que tende a pressionar o fornecedor ou a trocar de fornecedor.
+## Um exemplo para dimensionar
+Uma distribuidora emite cerca de 3.000 NF-e por mês. No período analisado, apenas 2.300 tinham os campos de CBS e IBS preenchidos.
+|Indicador|Valor
+|Documentos emitidos no período|3.000
+|Documentos com destaque de CBS e IBS|2.300
+|Índice de preenchimento|76,7%
+|Situação no critério da Receita|Destaque parcial (abaixo de 86%)
+Uma análise rápida mostra que as 700 notas sem destaque correspondem a três tipos de operação: bonificações, remessas para demonstração e vendas de uma linha de produtos cadastrada depois de agosto, sem classificação tributária. Corrigida a parametrização no sistema emissor, o índice passa de 95%, e a empresa tem como demonstrar "evolução contínua" caso seja questionada.
+O exemplo mostra o ponto central: a pergunta certa não é "vou ser multado?", mas sim **"o meu índice de preenchimento está subindo e eu consigo explicar as exceções?"**.
+## Checklist para a empresa e para o contador
+- **Meça o próprio índice.** Extraia do sistema emissor (ou do portal da NF-e) a quantidade de DF-e emitidos nos últimos 30 dias e quantos têm os grupos de CBS e IBS preenchidos.
+- **Classifique as exceções.** Identifique as operações sem destaque e verifique se há justificativa legal (não incidência, imunidade, operação fora do campo de incidência) ou se é falha de cadastro.
+- **Revise o cadastro de produtos e serviços.** NCM/NBS, CST e cClassTrib precisam estar coerentes com a operação.
+- **Confirme a data aplicável** a cada tipo de documento no Ato Conjunto nº 4/2026, especialmente para NFS-e e para quem não é contribuinte do ICMS (1/12/2026).
+- **Responda às comunicações.** Se o contador receber o aviso, registre a resposta e o plano de correção. Isso é prova de compromisso com a conformidade.
+- **Corrija até 31/12/2026.** É o prazo do programa de conformidade.
+- **Documente tudo.** Guarde relatórios de evolução mês a mês. Eles são a melhor defesa se, em 2027, alguém questionar o cumprimento das obrigações acessórias de 2026.
+## Perguntas frequentes
+### Recebi a comunicação. Vou ser multado?
+A comunicação, por si só, não é penalidade nem início de fiscalização. Ela tem finalidade orientativa e preventiva, e a autorregularização continua possível.
+### Minha empresa emite menos de 150 notas por mês. Estou dispensada?
+Não. O limite de 150 documentos foi apenas o filtro desta ação. A obrigação de destacar vale para todos os contribuintes alcançados pelo cronograma do Ato Conjunto nº 4/2026.
+### Sou do Simples Nacional. Preciso destacar CBS e IBS agora?
+Pelo cronograma, a obrigatoriedade para os optantes do Simples começa em **1º de janeiro de 2027**. Isso não impede o preenchimento antes, o que é recomendável para testar o sistema.
+### Se eu não destacar em 2026, perco a dispensa de recolhimento?
+A dispensa prevista na LC nº 214/2025 está condicionada ao cumprimento das obrigações acessórias. O programa de conformidade existe justamente para que a falha em 2026 seja corrigida antes de gerar consequência. Quem não se adaptar perde essa proteção.
+## Conclusão
+A ação da Receita com o CGIBS e o CFC é o primeiro uso em larga escala dos dados das novas notas fiscais. Ela não pune ninguém, mas mostra que o Fisco já sabe, nota por nota, quem está preenchendo os campos de CBS e IBS e quem não está. Para a empresa, o prazo prático é 31 de dezembro de 2026: até lá, o objetivo é ter um índice de preenchimento alto, exceções explicáveis e registro da evolução.
+*Fontes: Ministério da Fazenda, notícia de 19/11/2026; Receita Federal, notícia de 13/8/2026; LC nº 214/2025; Atos Conjuntos RFB/CGIBS nº 4/2026 e nº 5/2026. Este artigo tem caráter informativo e não substitui a análise do caso concreto.*
