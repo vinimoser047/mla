@@ -1,0 +1,56 @@
+# Salvaguardas bilaterais: a tarifa reduzida do acordo comercial pode voltar. O que o importador e a indústria precisam saber antes do fim da consulta pública
+@Vinicius Moser · O Tributarista Minucioso · 23 de novembro de 2026
+No dia 19 de novembro, a Secretaria de Comércio Exterior (Secex) do MDIC abriu **consulta pública** sobre a minuta de portaria que regulamenta o **procedimento das investigações de salvaguardas bilaterais**. O prazo para enviar contribuições é de **15 dias**, e a pasta quer publicar a norma ainda em 2026.
+Parece assunto de diplomata. Não é. A salvaguarda bilateral é o mecanismo que permite ao Brasil **suspender ou reduzir a tarifa preferencial** que um acordo comercial garante, por exemplo o acordo Mercosul–União Europeia. Para quem importa com tarifa reduzida, é um risco de custo. Para quem produz no Brasil e concorre com o importado, é uma ferramenta de defesa. Neste texto eu explico como funciona, o que a portaria vai definir e o que cada lado deve fazer agora.
+## O que é salvaguarda bilateral, em uma frase:
+É uma medida **temporária** que o Brasil pode aplicar quando as importações de um produto vindo de um parceiro comercial **crescem por causa da redução tarifária do acordo** e causam, ou ameaçam causar, **prejuízo grave à indústria nacional**.
+A diferença para o antidumping é importante. No antidumping, é preciso provar que o exportador vende abaixo do preço normal, uma prática desleal. Na salvaguarda, não há acusação de deslealdade: o comércio é legítimo, mas o aumento das importações é tão rápido que a indústria nacional precisa de tempo para se ajustar.
+## A base: Decreto nº 12.866/2026
+As regras gerais já existem desde março, no **Decreto nº 12.866, de 4 de março de 2026**, o primeiro a regulamentar as salvaguardas bilaterais no Brasil. Os pontos principais:
+- **Gatilho (art. 5º):** aumento das importações com preferência tarifária, em termos absolutos ou em relação à produção nacional, que cause ou ameace causar prejuízo grave à indústria doméstica.
+- **Quem pede (arts. 6º e 10):** a indústria doméstica, ou seja, os produtores nacionais do produto similar ou diretamente concorrente, ou um grupo que represente **proporção significativa** da produção nacional. A Secex só abre investigação de ofício em circunstâncias excepcionais.
+- **Período analisado (art. 9º):** em regra, os **últimos 36 meses**, e a petição deve ser apresentada em até quatro meses depois do fim desse período.
+- **Formas da medida (art. 13):** suspensão do cronograma de redução tarifária, redução da preferência, cotas tarifárias, restrições quantitativas ou outras que o acordo permita.
+- **Medida provisória (art. 11):** pode ser aplicada durante a investigação, se o acordo permitir.
+- **Quem decide:** o DECOM investiga e recomenda, a Secex conduz o processo e a **Camex** aplica a medida, podendo deixar de aplicá-la por conveniência e oportunidade (arts. 2º a 4º).
+- **Reconsideração (arts. 22 e 23):** prazo improrrogável de **10 dias** da publicação, **sem efeito suspensivo**.
+- **Acordo prevalece:** as regras específicas de cada acordo prevalecem sobre o decreto.
+## O que a portaria em consulta vai definir
+O decreto deu o "o quê". A portaria vai dar o "como". Segundo o MDIC, a minuta trata de:
+- requisitos para apresentar e analisar a **petição**;
+- **participação das partes** interessadas e produção de **provas**;
+- tratamento de **informações confidenciais**;
+- **prazos processuais**;
+- regras para **medidas provisórias e definitivas**;
+- **revisão para prorrogação**, quando o acordo permitir.
+A ideia é ter um procedimento único para todos os acordos, já em vigor ou futuros, respeitando as condições próprias de cada um.
+## Quanto pode custar ao importador: um exemplo
+Imagine uma empresa que importa da União Europeia um insumo industrial com tarifa cheia (TEC) de 14%. Pelo cronograma do acordo, a tarifa preferencial está em 7% e iria a zero nos próximos anos.
+|Cenário|Valor aduaneiro|Imposto de Importação|Diferença
+|Tarifa preferencial (7%)|R$ 1.000.000|R$ 70.000|
+|Salvaguarda: suspensão do cronograma (mantém 7%)|R$ 1.000.000|R$ 70.000|perde a redução futura
+|Salvaguarda: preferência retirada (volta à TEC de 14%)|R$ 1.000.000|R$ 140.000|+ R$ 70.000
+*Exemplo simplificado e hipotético. Na prática, o II também entra na base de outros tributos incidentes na importação, o que amplia o efeito.*
+O efeito é direto no custo do produto. E, como a medida pode ser provisória, aplicada no meio da investigação, o importador pode ser surpreendido com uma tarifa maior em um embarque já contratado.
+## Quem ganha e quem perde:
+- **A indústria nacional** que concorre com produtos de países com acordo ganha um instrumento novo, mais rápido de justificar que o antidumping, porque não exige provar preço desleal.
+- **O importador** que montou sua cadeia com base na tarifa preferencial passa a ter um risco regulatório que precisa ser medido e distribuído em contrato.
+- **O exportador estrangeiro** e seus representantes no Brasil passam a ter interesse em participar das investigações, com prova e contraditório.
+## O que o importador deve fazer agora:
+1. Mapeie quais produtos importa com **preferência tarifária** e de quais acordos.
+2. Identifique se há **indústria nacional** relevante para esses produtos. Quanto mais concentrada e organizada, maior a chance de pedido de salvaguarda.
+3. Revise os **contratos de compra internacional**: inclua cláusula de **revisão de preço ou de rescisão** se a tarifa preferencial for suspensa, e defina quem arca com o custo de embarques em trânsito.
+4. Revise os **contratos de venda** no Brasil: preveja repasse de aumento de custo por mudança tarifária.
+5. Acompanhe o **Diário Oficial da União** e o site do MDIC: a abertura de investigação é publicada, e é a partir dela que o importador pode se habilitar e apresentar provas.
+6. Considere enviar **contribuições à consulta pública**, principalmente sobre prazos, acesso a informações confidenciais e direito de defesa.
+## O que a indústria nacional deve fazer agora:
+1. Organize os **dados dos últimos 36 meses**: produção, vendas, estoques, emprego, margens e participação de mercado.
+2. Acompanhe as **estatísticas de importação** por NCM e por origem. O aumento precisa ser demonstrado.
+3. Articule-se com a **entidade de classe**: a petição precisa representar proporção significativa da produção nacional.
+4. Participe da consulta pública, especialmente sobre os **requisitos da petição** e o **tratamento de dados confidenciais**.
+## E o prazo da consulta?
+O MDIC informou prazo de **15 dias** a partir da abertura, em 19 de novembro, o que leva o fim da consulta para o início de dezembro. A minuta e as orientações estão no link da consulta publicado na Imprensa Nacional e no site do MDIC. Confirme a data exata no edital antes de enviar a sua contribuição.
+*Este texto tem caráter informativo e não substitui a análise do caso concreto da sua empresa.*
+## Fontes:
+- MDIC. "MDIC abre consulta pública sobre regulamentação de salvaguardas bilaterais", 20/11/2026.
+- Decreto nº 12.866, de 4 de março de 2026.
