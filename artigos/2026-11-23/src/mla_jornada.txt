@@ -1,0 +1,63 @@
+# Jornada de 42 horas a partir de 16 de dezembro: o que o Decreto nº 13.173/2026 exige da sua empresa
+@Manassés Lopes Advogados · Trabalhista e Empresarial · 23 de novembro de 2026 · Leitura de 7 minutos
+Faltam pouco mais de três semanas para a primeira etapa do fim da escala 6x1. Em **16 de dezembro de 2026**, a jornada semanal máxima cai de **44 para 42 horas** e todo empregado passa a ter **dois dias de repouso semanal remunerado**, sem redução de salário. Em **16 de dezembro de 2027**, o limite cai para **40 horas**.
+A mudança vem da **Emenda Constitucional nº 141/2026**, promulgada em outubro. Na quinta-feira (19/11), o governo publicou o **Decreto nº 13.173/2026**, que regulamenta a emenda. Neste artigo explicamos o que o decreto definiu, o que ainda depende de portaria do Ministério do Trabalho e Emprego (MTE) e o que a empresa precisa fazer antes de fechar a folha de dezembro.
+## O que o decreto resolveu
+O decreto é curto, com sete artigos. Os pontos de maior impacto para o empregador são:
+- **Abrangência:** vale para empregados urbanos, rurais e domésticos e, no que couber, para trabalhadores avulsos (art. 1º). O agro e o empregador doméstico estão dentro.
+- **Novo divisor do salário-hora:** **210** para a jornada de 42 horas e **200** para a de 40 horas (art. 5º). Se lei, convenção, acordo coletivo ou o próprio contrato preverem divisor menor, ele continua valendo. Prevalece sempre o mais favorável ao empregado.
+- **Turnos ininterruptos de revezamento:** mantida a jornada de seis horas, salvo norma coletiva diferente, com média mensal compatível com o limite semanal e dois dias de repouso (art. 2º).
+- **Escala 12x36:** se a média mensal passar do limite semanal (42 horas, e depois 40), a diferença deve ser **compensada ou paga como hora extra**, nos termos da convenção ou do acordo coletivo (art. 3º).
+- **Vigência:** o decreto vale desde a publicação, mas os efeitos seguem o calendário da emenda (art. 7º).
+## O que ainda falta
+O decreto deixou ao MTE a regulamentação do **repouso semanal remunerado** e dos **regimes especiais de jornada** (arts. 4º e 6º). O ministro do Trabalho anunciou que as portarias começariam a sair a partir desta semana. Até lá, ficam em aberto pontos como a distribuição das duas folgas em atividades que funcionam todos os dias, o comércio aos domingos e categorias com escalas próprias.
+> Não espere a portaria para começar. A redução de horas e o novo divisor já estão definidos e valem em 16 de dezembro, com ou sem portaria.
+## Quanto custa: o efeito do divisor
+O salário não pode cair, mas as horas caem. Resultado: o valor da hora sobe, e com ele tudo o que é calculado sobre a hora, como horas extras, adicional noturno e reflexos.
+|Salário mensal de R$ 3.000|Divisor|Valor da hora|Hora extra (50%)
+|Hoje (44 horas)|220|R$ 13,64|R$ 20,45
+|A partir de 16/12/2026 (42 horas)|210|R$ 14,29|R$ 21,43
+|A partir de 16/12/2027 (40 horas)|200|R$ 15,00|R$ 22,50
+*Valores arredondados. Exemplo sem considerar adicionais previstos em norma coletiva.*
+Em uma equipe de 50 empregados que fazem, em média, 20 horas extras por mês com salário de R$ 3.000, o custo mensal só de horas extras sobe cerca de **R$ 980** em dezembro de 2026 e **R$ 2.050** em dezembro de 2027, sem contar reflexos em férias, 13º, FGTS e INSS. E isso supondo que o volume de horas extras não aumente, o que é improvável: com menos horas contratadas, a mesma operação tende a gerar mais horas extras ou a exigir contratação.
+## Como distribuir as 42 horas
+A emenda manteve o limite de **oito horas por dia**. Para cumprir 42 horas em cinco dias, a conta não fecha sem alguma flexibilidade:
+- **Com norma coletiva:** convenção ou acordo coletivo podem ampliar a duração diária para distribuir as 42 horas, preservadas as duas folgas. Também podem prever compensação que garanta, na média do mês, dois dias de descanso por semana, com pelo menos uma folga em cada semana.
+- **Sem norma coletiva:** a imprensa noticiou decisão liminar do ministro Flávio Dino, do STF, de 12 de novembro, que permitiria distribuir as 42 horas em cinco dias de até **8h24**, sem que os 24 minutos excedentes sejam pagos como extra, até 15 de dezembro de 2027. Por ser decisão provisória, recomendamos usar essa saída com cautela e documentar a escala adotada.
+- **Contratar 40 horas já em 2026:** com cinco dias de oito horas, a empresa chega a 40 horas semanais sem tocar no limite diário. É a saída mais simples para quem não tem norma coletiva, mas antecipa o custo da segunda etapa.
+Faça a conta: com duas folgas, sobram cinco dias de trabalho, e 42 dividido por 5 dá 8,4 horas por dia. Ou seja, **sem norma coletiva (ou sem a liminar), não há como usar as 42 horas inteiras em cinco dias de até oito horas**. Na dúvida, a saída mais segura é a negociação coletiva.
+## Quem já trabalha 40 horas ou menos
+Quem já tem jornada de até 40 horas **não tem redução proporcional de horas**, mas passa a ter direito às **duas folgas semanais**. Isso afeta, por exemplo, empresas que distribuem 40 horas em seis dias (6h40 por dia). Esses contratos precisam ser redesenhados.
+## O que a empresa deve fazer até 16 de dezembro
+1. **Mapeie as jornadas:** liste quem trabalha em 6x1, quem trabalha 44 horas em 5x2, quem está em 12x36 e em turnos de revezamento.
+2. **Refaça as escalas** para dezembro de 2026, com duas folgas semanais e limite de 42 horas.
+3. **Atualize o sistema de folha e de ponto** com o divisor 210 a partir de 16/12. Dezembro será um mês "quebrado", com duas regras em vigor.
+4. **Procure o sindicato** se a escala depender de jornada diária acima de oito horas, compensação mensal ou trabalho aos domingos. Sem norma coletiva, a margem de manobra é pequena.
+5. **Revise os contratos de trabalho** e os aditivos de jornada, especialmente de quem tem 40 horas distribuídas em seis dias.
+6. **Projete o custo** de 2027: horas extras, contratações e reflexos. O planejamento orçamentário deve incluir a segunda etapa, de 40 horas.
+7. **Revise contratos com clientes:** em contratos de prestação de serviços com mão de obra dedicada (limpeza, vigilância, terceirização, facilities), a redução de jornada pode justificar **reequilíbrio econômico-financeiro**. Verifique se o contrato tem cláusula de revisão por alteração legal e notifique o cliente formalmente.
+8. **Acompanhe as portarias do MTE** sobre repouso semanal e regimes especiais, que devem sair nas próximas semanas.
+## Contratos com terceirização e prestação de serviços: atenção redobrada
+Para empresas que vendem mão de obra, a mudança não é só trabalhista. Um contrato de limpeza com postos de 44 horas semanais precisará de mais horas contratadas para cobrir o mesmo posto. Se o preço não for revisto, a margem desaparece.
+Recomendamos verificar três cláusulas no contrato com o tomador:
+- **Revisão por fato do príncipe ou alteração legislativa**, que permite repassar ao preço o custo de mudanças na lei;
+- **Reajuste por convenção coletiva**, comum em contratos de serviços contínuos;
+- **Forma de notificação** e prazo para o pedido de revisão.
+Em contratos com a administração pública, o pedido de reequilíbrio deve ser feito com planilha de custos e fundamentado na alteração constitucional. Quanto antes for protocolado, menor o período sem cobertura.
+## Perguntas frequentes
+### A redução vale para contratos já em vigor?
+Sim. A redução se aplica aos contratos em curso, sem redução de salário, inclusive para quem recebe o piso da categoria.
+### Posso reduzir o salário de quem ganha por hora?
+A emenda proíbe a redução salarial. Para horistas, a orientação prudente é preservar a remuneração mensal média, até que o MTE esclareça o tema.
+### O empregado doméstico também tem direito?
+Sim. O decreto inclui expressamente os empregados domésticos.
+### E se a empresa não se adaptar?
+As horas acima de 42 semanais a partir de 16/12/2026 serão devidas como extras, com reflexos, além do risco de autuação pela fiscalização do trabalho e de ações trabalhistas.
+## Como podemos ajudar
+O Manassés Lopes Advogados apoia empresas na revisão de escalas e contratos de trabalho, na negociação de acordos coletivos e no reequilíbrio de contratos de prestação de serviços afetados pela nova jornada.
+*Este artigo tem caráter informativo e não substitui a análise do caso concreto.*
+## Fontes
+- Decreto nº 13.173, de 19 de novembro de 2026 (DOU, edição extra de 19/11/2026).
+- Emenda Constitucional nº 141/2026.
+- Agência Gov. "Lula assina decreto que regulamenta o fim da escala de trabalho 6x1", 19/11/2026.
+- Folha de Pernambuco. "Entenda o decreto que regulamenta o fim da escala 6x1", 19/11/2026.
