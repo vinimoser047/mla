@@ -1,0 +1,31 @@
+# Chamadas para LinkedIn: 26/11/2026
+> Antes de postar, troque os links marcados com [confirmar] pelo endereço final de cada publicação.
+## Post 1: Programa de boa-fé da Receita na reforma tributária
+**A Receita não vai punir quem errar de boa-fé na reforma tributária. A pergunta é: sua empresa consegue provar que agiu de boa-fé?**
+Hoje (26/11), o secretário da Receita Federal, Robinson Barreirinhas, confirmou que o programa de conformidade para 2027 deve sair nas próximas semanas. O que já foi anunciado:
+✔️ Erros de transição não serão punidos se não houver omissão de dados nem dissimulação de operações.
+✔️ Simples Nacional que vende mercadorias: o novo documento fiscal passa a ser exigido em 1º de março de 2027. Em janeiro e fevereiro, as notas atuais continuam aceitas.
+✔️ CBS destacada errado poderá ser corrigida pela apuração assistida, em uma declaração pré-preenchida.
+⚠️ Prestadores de serviço do Simples não entraram no adiamento.
+⚠️ Afastar a multa não afasta o tributo. A diferença continua devida, com juros.
+⏳ O regulamento da CBS está na Casa Civil, e os atos complementares devem sair na próxima semana.
+Boa-fé, para o Fisco, é o que se demonstra: nota emitida, critério escrito, erro corrigido a tempo. Quem chegar a janeiro sem esse dossiê vai depender de discussão.
+No artigo, explicamos o que o programa cobre, um exemplo prático e um checklist de sete passos para dezembro.
+Leia...:
+Manasses Lopes Advogados: https://www.manasseslopes.com/post/programa-boa-fe-reforma-tributaria [confirmar]
+O Tributarista Minucioso: https://otributaristaminucioso.blogspot.com/
+#ReformaTributária #CBS #IBS #SimplesNacional #Tributário #Compliance #Empresas
+## Post 2: Portal Único concluído em 10/12 e o fim da DI
+**Importa? Em 10 de dezembro, o Portal Único de Comércio Exterior estará concluído. A DI do Siscomex, em uso desde 1993, sai de cena.**
+O MDIC anunciou hoje que a migração para a Duimp termina em 10/12. A meta é reduzir o prazo médio de importação de 17 para 6,8 dias.
+Mas a Duimp só é rápida para quem chega preparado:
+🔹 A descrição da mercadoria vem do Catálogo de Produtos. Um erro de NCM ou de atributo se repete em todas as declarações daquele item.
+🔹 O pagamento de tributos é centralizado no Portal. Conta e aprovação precisam estar definidas.
+🔹 Em janeiro, a CBS substitui PIS e Cofins na importação. Os campos de IBS e CBS do cadastro precisam estar certos para o crédito sair certo.
+🔹 Rodoviário, Zona Franca de Manaus e carga de projeto migram em 1º de dezembro.
+Exemplo: pelo próprio MDIC, cada dia de carga parada custa cerca de 0,08% do valor. Em um contêiner de R$ 800 mil, dez dias parados são R$ 6.400, antes de armazenagem e demurrage.
+No artigo, detalho o cronograma, os cinco pontos de revisão e um checklist até 10 de dezembro.
+Leia...:
+Manasses Lopes Advogados: https://www.manasseslopes.com/blog
+O Tributarista Minucioso: https://otributaristaminucioso.blogspot.com/2026/11/portal-unico-duimp-fim-da-di.html [confirmar]
+#ComércioExterior #Importação #Duimp #PortalÚnico #Aduaneiro #ReformaTributária #Indústria

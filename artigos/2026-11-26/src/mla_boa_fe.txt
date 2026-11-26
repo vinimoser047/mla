@@ -1,0 +1,57 @@
+# Erro de boa-fé na reforma tributária não será punido. Mas quem vai provar a boa-fé da sua empresa?
+@Manassés Lopes Advogados | Tributário | 26 de novembro de 2026
+A Receita Federal confirmou nesta quinta-feira (26/11) que prepara um programa para afastar punições às empresas que errarem de boa-fé no início da reforma tributária. Segundo o secretário especial Robinson Barreirinhas, o texto deve ser publicado nas próximas semanas, foi discutido com estados e municípios e teve sinal positivo do Comitê Gestor do IBS.
+Na mesma entrevista, foram confirmados três pontos com efeito direto no dia a dia das empresas: o adiamento para março de 2027 do novo documento fiscal para o Simples Nacional que vende mercadorias, a possibilidade de corrigir a apuração da CBS por uma declaração pré-preenchida e a publicação iminente do regulamento da CBS.
+A notícia é boa. Só que "boa-fé" não é um selo que a empresa recebe. É um fato que, se houver questionamento, ela terá de demonstrar com documentos. Este artigo explica o que já se sabe, o que ainda depende de norma e o que fazer em dezembro para estar do lado protegido da regra.
+## O que foi anunciado
+- **Programa de conformidade para 2027:** erros cometidos na transição não serão punidos quando o contribuinte não omitir dados, não dissimular operações e seguir boas práticas contábeis. A previsão é de publicação nas próximas semanas.
+- **Documento fiscal do Simples Nacional:** para as empresas do Simples que vendem mercadorias, a exigência do novo modelo de documento fiscal passa para 1º de março de 2027. Em janeiro e fevereiro, quem tiver o sistema pronto já pode emitir no novo padrão. Os demais seguem com as notas atuais.
+- **Apuração assistida:** se a CBS não estiver destacada corretamente, o contador poderá ajustar a apuração por meio de uma declaração pré-preenchida, nos moldes da do Imposto de Renda. O ajuste item a item já está disponível. Um módulo para ajustes em bloco, pedido pelo Conselho Federal de Contabilidade, terá piloto nas próximas semanas.
+- **Normas pendentes:** os atos complementares com esclarecimentos às empresas devem sair na próxima semana, e o regulamento, a ser publicado por decreto, já está na Casa Civil.
+A reforma não foi adiada. A CBS começa a ser cobrada em 1º de janeiro de 2027, com a extinção do PIS e da Cofins.
+## O que o programa cobre e o que ele não cobre
+O anúncio, por enquanto, não tem texto normativo. Pelo que foi dito em 11/11 e repetido hoje, o desenho é este:
+|Situação|Tendência no programa|
+|Erro de classificação ou de destaque da CBS, com nota emitida e operação informada|Orientação e correção, sem multa|
+|Dúvida fundamentada sobre a regra aplicável, com critério documentado|Sem punição durante a transição|
+|Nota não emitida ou receita não declarada|Fora do programa: omissão|
+|Operação simulada ou estrutura para esconder o real contribuinte|Fora do programa: dissimulação|
+|Falta de pagamento do tributo apurado|O tributo continua devido, com juros|
+Dois cuidados. Primeiro: afastar a multa não afasta o tributo. Se a CBS foi recolhida a menor, a diferença continua devida. Segundo: o próprio secretário defendeu publicamente que a tolerância vá além de 2027, mas isso é posição, não regra. Até o texto sair, ninguém sabe o prazo exato nem os critérios formais.
+> Boa-fé, para o Fisco, não é intenção. É o que a empresa consegue mostrar: notas emitidas, dados completos, critério escrito e correção feita quando o erro apareceu.
+## O que a Receita deve olhar para reconhecer a boa-fé
+Ainda sem o texto final, os critérios anunciados apontam para quatro perguntas que a empresa deve conseguir responder com papel na mão:
+1. **Os dados foram informados?** Toda operação teve documento fiscal, ainda que com erro de destaque.
+2. **O critério foi escolhido de forma técnica?** Há registro de por que a empresa aplicou aquela classificação ou aquela alíquota.
+3. **O erro foi corrigido quando apareceu?** O ajuste na apuração assistida foi feito no prazo, e não depois de uma fiscalização.
+4. **A empresa seguiu as orientações oficiais?** Atos, perguntas e respostas e comunicados da Receita e do CGIBS foram acompanhados e aplicados.
+## Exemplo prático
+Uma distribuidora do lucro presumido fatura R$ 2 milhões por mês. Em janeiro de 2027, por erro de parametrização do sistema, 15% das notas saem com o código de classificação tributária errado e a CBS destacada a menor.
+- **Sem o programa:** a diferença de CBS seria cobrada com juros e multa de ofício, com risco de discussão sobre crédito com os clientes.
+- **Com o programa, e com a empresa preparada:** o contador identifica a divergência na apuração pré-preenchida, ajusta os itens, recolhe a diferença com juros e guarda o registro do erro de sistema e da correção. A multa tende a ser afastada.
+- **Com o programa, mas sem documentação:** a empresa não consegue demonstrar quando percebeu o erro nem por que escolheu aquele código. A proteção vira discussão.
+O que separa o segundo cenário do terceiro não é o tamanho da empresa. É ter um dossiê.
+## O Simples que vende mercadorias ganhou dois meses. Use-os
+O adiamento para 1º de março de 2027 alcança, segundo o secretário, "tudo o que não é prestação de serviço" no Simples Nacional. Prestadores de serviço do Simples, portanto, devem se preparar para janeiro. Os documentos fiscais de locação e arrendamento também seguem exigíveis desde janeiro.
+Para quem vende mercadorias, o adiamento não muda a data da CBS nem o fato de que o cliente do regime regular só aproveita o crédito do que o fornecedor do Simples efetivamente recolher. Dois meses a mais servem para testar o sistema, não para adiar a decisão comercial.
+## Checklist para dezembro
+1. **Teste o emissor de notas** no ambiente piloto da Receita, com produtos e serviços reais da sua operação.
+2. **Monte um dossiê de critérios:** uma planilha com cada produto ou serviço, a classificação adotada, a alíquota e a fonte (lei, ato, resposta oficial).
+3. **Defina quem revisa a apuração assistida** todo mês e em que prazo. Combine isso por escrito com a contabilidade.
+4. **Guarde as evidências de erro de sistema:** chamados ao fornecedor do software, versões, datas de correção.
+5. **Revise contratos com fornecedores e clientes:** inclua cláusula sobre destaque correto de CBS e IBS, dever de emitir nota corretiva e responsabilidade por crédito glosado.
+6. **Revise o contrato com o fornecedor do sistema:** prazo de atualização para as normas da reforma e responsabilidade por falhas de parametrização.
+7. **Acompanhe os atos complementares** da próxima semana e o regulamento da CBS. O programa vai depender deles.
+## Perguntas frequentes
+**O programa é uma anistia de multas em 2027?**
+Não como foi anunciado. A proteção depende de boa-fé, sem omissão e sem dissimulação. E o tributo devido continua devido.
+**Minha empresa é do Simples e presta serviços. O adiamento me alcança?**
+Pelo que foi dito, não. O adiamento é para quem vende mercadorias. Confirme quando sair o ato.
+**Se eu emitir a nota no modelo antigo em janeiro, sendo do Simples e vendendo mercadorias, posso ser multado?**
+Pelo anúncio, não: em janeiro e fevereiro a nota atual continua aceita para esse grupo. A partir de 1º de março, o novo modelo passa a ser exigido.
+**Quem corrige a apuração pré-preenchida: a empresa ou o contador?**
+O sistema foi pensado para o contador. Mas a responsabilidade pelo tributo é da empresa. Vale formalizar no contrato de serviços contábeis quem revisa, em que prazo e com qual aprovação.
+## Em resumo
+A Receita está sinalizando tolerância com quem tentar acertar. O risco está em confundir tolerância com dispensa de organização. A empresa que chegar a janeiro com sistema testado, critérios escritos e contratos ajustados é a que vai conseguir mostrar que agiu de boa-fé.
+A equipe tributária da Manassés Lopes Advogados pode revisar seus critérios de classificação, montar o dossiê de conformidade e ajustar contratos com clientes, fornecedores e prestadores de sistema para a entrada da CBS.
+*Fontes: Ministério da Fazenda, notícias de 12/11/2026 ("Receita Federal e órgãos parceiros detalham próximos passos da Reforma Tributária") e 26/11/2026 ("Receita prepara programa para afastar punições a empresas de boa-fé na transição da Reforma Tributária"); Fenacon, 12/11/2026. O programa de 2027 ainda não foi publicado em ato normativo. Este texto é informativo e não substitui a análise do caso concreto.*

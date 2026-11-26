@@ -1,0 +1,56 @@
+# Portal Único concluído em 10 de dezembro: o fim da DI e os 5 pontos que o importador precisa conferir antes do Natal
+@Por Vinícius Moser | 26 de novembro de 2026
+O MDIC anunciou hoje (26/11) que a implantação do Portal Único de Comércio Exterior será concluída em **10 de dezembro de 2026**. É o fim de um processo que começou em 2014 e que, na prática, aposenta a Declaração de Importação (DI) do Siscomex, em uso desde 1993.
+Para quem importa, a notícia tem duas leituras. A boa: a meta oficial é reduzir o prazo médio de importação de 17 para 6,8 dias, e o de exportação de 13 para 4,5 dias. A que exige atenção: quem ainda não migrou para a Duimp tem poucos dias úteis, em pleno pico de fim de ano, e a primeira CBS cobrada na importação chega em janeiro.
+Vamos por partes.
+## O que foi anunciado
+- **Conclusão:** 10 de dezembro de 2026, com cerimônias de entrega em São Paulo (27/11) e Brasília (1º/12).
+- **Coordenação:** Secex/MDIC e Receita Federal, com participação do setor privado pelo Comitê Nacional de Facilitação do Comércio (Confac).
+- **Base normativa:** o Acordo sobre Facilitação do Comércio da OMC, incorporado pelo Decreto nº 9.326/2018.
+- **O que o Portal reúne:** Declaração Única de Exportação (DU-E), Declaração Única de Importação (Duimp), Licenças, Permissões, Certificados e Outros Documentos (LPCO), pagamento centralizado de tributos e encargos, anexação eletrônica de documentos e integração dos órgãos anuentes, com gestão de risco automatizada.
+## O cronograma da Duimp, em uma tabela
+A migração foi feita por etapas. As datas abaixo seguem o cronograma divulgado ao longo de 2026 nas Notícias Siscomex. Confira a sua operação específica no Portal Único antes de registrar.
+|Data|O que migrou para a Duimp|
+|27/04/2026|Marítimo e aéreo, com e sem controle administrativo (a maior parte das importações comerciais)|
+|11/10/2026|Marítimo a granel, sólidos e líquidos|
+|01/12/2026|Rodoviário (com CCT Importação), Radar limitado, Zona Franca de Manaus e Áreas de Livre Comércio, carga de projeto, entre outros|
+|10/12/2026|Conclusão do Portal Único e desligamento dos casos restantes, segundo o MDIC e a Receita|
+Ferroviário e operações da administração pública direta foram tratados à parte. Se for o seu caso, acompanhe a Notícia Siscomex específica.
+## Ponto 1: o Catálogo de Produtos é a nova base da sua importação
+Na Duimp, a descrição da mercadoria não é digitada a cada declaração. Ela vem do Catálogo de Produtos, cadastrado uma vez por produto, com os atributos exigidos para cada NCM.
+Isso muda a lógica do risco. Antes, um erro de descrição afetava uma DI. Agora, um erro no cadastro se repete em todas as Duimps daquele produto, até que alguém o corrija. E erro de classificação fiscal ou descrição incompleta continua sendo base para multa aduaneira.
+**O que conferir:** NCM de cada item, atributos obrigatórios, fabricante e país de origem, e quem na empresa (ou no despachante) tem autorização para alterar o cadastro.
+## Ponto 2: o pagamento centralizado
+O Portal concentra o pagamento de tributos e encargos da importação. Para o financeiro, isso significa que a conta de débito e os responsáveis pela aprovação precisam estar definidos antes do registro. Para o fiscal, que os valores pagos precisam conversar com a escrituração.
+Em 2027, essa conversa fica mais delicada: a importação passa a ter CBS no lugar do PIS-Importação e da Cofins-Importação. A Duimp já traz os campos de IBS e CBS, inclusive o código de classificação tributária, e o cadastro precisa estar preenchido para o crédito na entrada sair certo.
+## Ponto 3: quanto custa um dia parado
+O próprio MDIC citou um número útil: cada dia de carga parada custa cerca de **0,08% do valor da carga**.
+Exemplo: um contêiner com mercadoria de R$ 800 mil.
+- Cada dia parado: R$ 640.
+- Dez dias parados por pendência de cadastro ou de LPCO: R$ 6.400, sem contar armazenagem e demurrage, que costumam pesar mais.
+- Em dezembro, com fila no porto e prazo de entrega de fim de ano, o custo indireto (venda perdida, multa contratual com o cliente) pode superar o direto.
+> A Duimp é mais rápida para quem chega com o cadastro pronto. Para quem chega sem, ela trava na primeira tela.
+## Ponto 4: o contrato com o despachante e com o cliente
+Com o fim da DI, vale reler dois contratos:
+1. **Com o despachante ou a trading:** quem cadastra e mantém o Catálogo, quem responde por erro de atributo ou de NCM, e qual o prazo de resposta em caso de exigência.
+2. **Com o cliente final:** se o contrato prevê prazo de entrega fixo, há cláusula para atraso causado por mudança de sistema aduaneiro? Em fornecimentos com prazo apertado, uma cláusula de força maior genérica nem sempre cobre falha de cadastro do próprio importador.
+## Ponto 5: o exportador também deve olhar
+A DU-E já é usada há anos, mas a integração dos órgãos anuentes e do LPCO muda o fluxo de quem exporta produto com controle (agro, alimentos, químicos). A meta de 4,5 dias só vale para quem tem licenças e certificados emitidos pelo novo fluxo.
+## Checklist até 10 de dezembro
+1. Liste as importações previstas até janeiro e confirme o modal e a data de migração de cada uma.
+2. Revise o Catálogo de Produtos: NCM, atributos, fabricante, campos de IBS e CBS.
+3. Confirme os perfis de acesso ao Portal Único (empresa, despachante, representantes).
+4. Defina a conta e o fluxo de aprovação do pagamento centralizado.
+5. Antecipe pedidos de LPCO para mercadorias com anuência.
+6. Releia os contratos com despachante e clientes quanto a prazo e responsabilidade.
+7. Combine com a contabilidade como os tributos pagos na Duimp serão conciliados a partir de janeiro, com a CBS.
+## Perguntas frequentes
+**Ainda posso registrar DI depois de 10 de dezembro?**
+Pelo anúncio oficial, a implantação estará concluída nessa data. Só registre DI se houver previsão expressa em Notícia Siscomex para o seu caso.
+**Quem é do Simples Nacional precisa da Duimp?**
+Sim. A declaração de importação não depende do regime tributário da empresa.
+**A Duimp muda o valor dos tributos?**
+Não. Ela muda a forma de declarar e pagar. Os tributos mudam em janeiro, com a CBS no lugar do PIS e da Cofins na importação.
+## Conclusão
+O Portal Único é uma boa notícia para o comércio exterior brasileiro. A CNI projeta acréscimo de US$ 108 bilhões ao PIB até 2040. Mas a transição chega junto com o pico de fim de ano e com a primeira CBS. Duas semanas de revisão de cadastro e contratos agora evitam semanas de carga parada em janeiro.
+*Fontes: MDIC, notícia de 26/11/2026 ("Governo Federal conclui implantação do Portal Único de Comércio Exterior em dezembro"); Decreto nº 9.326/2018; cronograma de migração da Duimp divulgado em Notícias Siscomex ao longo de 2026. Confira as datas da sua operação no Portal Único Siscomex. Texto informativo, que não substitui a análise do caso concreto.*
